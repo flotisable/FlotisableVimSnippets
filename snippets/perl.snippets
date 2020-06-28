@@ -1,0 +1,99 @@
+version 1
+
+# basic structure
+snippet #! 
+	#!/usr/bin/perl
+
+snippet pragma
+	use strict;
+	use warnings;
+
+snippet name
+	=head1 NAME
+
+	B<${1:program name}> - ${2:description}
+	=cut
+
+snippet synopsis
+	=head1 SYNOPSIS
+
+	${1:synopsis}
+	=cut
+
+snippet option
+	=head1 OPTIONS
+
+	=over
+	
+	=item I<${1:option}>
+
+	=back
+	=cut
+
+# Moose
+snippet class
+	package ${1:<package name>};
+
+	use Moose;
+
+	$0
+
+	no Moose;
+	1;
+
+snippet attr
+	has ${1:<attribute name>} =>
+	(
+		is			=> 'rw',
+		isa			=> '${2:Maybe[${3:<type>}]}',
+		deafult	=> ${4:<deafult value>},
+	);
+
+# basic syntax
+snippet if
+	if( ${1:<condition>} )
+	{
+		$0
+	}
+
+snippet ifelse
+	if( ${1:<condition>} )
+	{
+		$0
+	}
+	else
+	{
+	}
+
+snippet while
+	while( ${1:<condition>} )
+	{
+		$0
+	}
+
+snippet for
+	for my ${1:<var>} ( ${2:list} )
+	{
+		$0
+	}
+
+snippet func
+	sub ${1:<function name>}
+	{
+		$0
+	}
+
+snippet package
+	package ${1:<package name>};
+
+	$0
+
+	1;
+
+snippet method
+	sub ${1:<method name>}
+	{
+		my $self = shift;
+
+		$0
+	}
