@@ -1,26 +1,26 @@
 version 1
 
 # basic structure
-snippet #! 
+snippet #! "shebang"
 	#!/usr/bin/perl
 
-snippet pragma
+snippet pragma "default pragmas"
 	use strict;
 	use warnings;
 
-snippet name
+snippet name "program name doc"
 	=head1 NAME
 
 	B<${1:program name}> - ${2:description}
 	=cut
 
-snippet synopsis
+snippet synopsis "synopsis doc"
 	=head1 SYNOPSIS
 
 	${1:synopsis}
 	=cut
 
-snippet option
+snippet option "command line option doc"
 	=head1 OPTIONS
 
 	=over
@@ -30,8 +30,17 @@ snippet option
 	=back
 	=cut
 
+snippet getopt "command line options"
+	GetOptions(
+							$0
+						) or die 'Invalid Option';
+
+snippet getoptarray "command line options"
+	GetOptionsFromArray	( \${1:<array>},
+												$0
+											) or die 'Invalid Option';
 # Moose
-snippet class
+snippet class "Moose class"
 	package ${1:<package name>};
 
 	use Moose;
@@ -41,7 +50,7 @@ snippet class
 	no Moose;
 	1;
 
-snippet attr
+snippet attr "object attribute"
 	has ${1:<attribute name>} =>
 	(
 		is			=> 'rw',
@@ -50,50 +59,75 @@ snippet attr
 	);
 
 # basic syntax
-snippet if
+snippet if "if control flow"
 	if( ${1:<condition>} )
 	{
 		$0
 	}
 
-snippet ifelse
-	if( ${1:<condition>} )
-	{
-		$0
-	}
+snippet else "else control flow"
 	else
 	{
+		$0
 	}
 
-snippet while
+snippet unless "unless control flow"
+	unless( ${1:<condition>} )
+	{
+		$0
+	}
+
+snippet while "while control flow"
 	while( ${1:<condition>} )
 	{
 		$0
 	}
 
-snippet for
-	for my ${1:<var>} ( ${2:list} )
+snippet until "until control flow"
+	until( ${1:<condition>} )
 	{
 		$0
 	}
 
-snippet func
+snippet for "for control flow"
+	for my ${1:<var>} ( ${2:<list>} )
+	{
+		$0
+	}
+
+snippet func "function"
 	sub ${1:<function name>}
 	{
 		$0
 	}
 
-snippet package
+snippet package "package"
 	package ${1:<package name>};
 
 	$0
 
 	1;
 
-snippet method
+snippet method "object method"
 	sub ${1:<method name>}
 	{
 		my $self = shift;
 
 		$0
 	}
+
+snippet openr "open file for read"
+	open my ${1:<file handle>}, '<', ${2:<file name>};
+
+	while( <${1}> )
+	{
+		$0
+	}
+	close ${1};
+
+snippet openw "open file for write"
+	open my ${1:<file handle>}, '>', ${2:<file name>};
+
+	$0
+
+	close ${1}
