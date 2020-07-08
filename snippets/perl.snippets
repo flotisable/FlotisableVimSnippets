@@ -32,12 +32,12 @@ snippet option "command line option doc"
 
 snippet getopt "command line options"
 	GetOptions(
-							$0
+							${0}
 						) or die 'Invalid Option';
 
 snippet getoptarray "command line options"
 	GetOptionsFromArray	( \${1:<array>},
-												$0
+												${0}
 											) or die 'Invalid Option';
 # Moose
 snippet class "Moose class"
@@ -45,7 +45,7 @@ snippet class "Moose class"
 
 	use Moose;
 
-	$0
+	${0}
 
 	no Moose;
 	1;
@@ -62,49 +62,49 @@ snippet attr "object attribute"
 snippet if "if control flow"
 	if( ${1:<condition>} )
 	{
-		$0
+		${0:{VISUAL}}
 	}
 
 snippet else "else control flow"
 	else
 	{
-		$0
+		${0:{VISUAL}}
 	}
 
 snippet unless "unless control flow"
 	unless( ${1:<condition>} )
 	{
-		$0
+		${0:{VISUAL}}
 	}
 
 snippet while "while control flow"
 	while( ${1:<condition>} )
 	{
-		$0
+		${0:{VISUAL}}
 	}
 
 snippet until "until control flow"
 	until( ${1:<condition>} )
 	{
-		$0
+		${0:{VISUAL}}
 	}
 
 snippet for "for control flow"
 	for my ${1:<var>} ( ${2:<list>} )
 	{
-		$0
+		${0:{VISUAL}}
 	}
 
 snippet func "function"
 	sub ${1:<function name>}
 	{
-		$0
+		${0:{VISUAL}}
 	}
 
 snippet package "package"
 	package ${1:<package name>};
 
-	$0
+	${0}
 
 	1;
 
@@ -113,7 +113,7 @@ snippet method "object method"
 	{
 		my $self = shift;
 
-		$0
+		${0}
 	}
 
 snippet openr "open file for read"
@@ -121,13 +121,13 @@ snippet openr "open file for read"
 
 	while( <${1}> )
 	{
-		$0
+		${0}
 	}
 	close ${1};
 
 snippet openw "open file for write"
 	open my ${1:<file handle>}, '>', ${2:<file name>};
 
-	$0
+	${0}
 
 	close ${1}
