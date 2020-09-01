@@ -1,0 +1,41 @@
+snippet template "template of perl script"
+	#!/usr/bin/perl
+	use strict;
+	use warnings;
+
+	use Getopt::Long qw/GetOptionsFromArray/;
+
+	=head1 NAME
+
+	B<`Filename( "$1.pl" )`> - ${1:<brief description of program>}
+
+	=head1 SYNOPSIS
+
+		`Filename( "$1.pl" )`${2:<synopsis>}
+
+	=head1 OPTIONS
+
+	=over
+
+	=item I<${3:<option>}>
+
+	${4:<description of option>}
+
+	=back
+
+	=cut
+
+	sub main;
+
+	main( @ARGV );
+
+	sub main
+	{
+		my @argv = @_;
+
+		GetOptionsFromArray	( \@argv,
+													${5:<options>}
+												) or die "Invalid Option";
+
+		$0
+	}
