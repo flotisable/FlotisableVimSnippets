@@ -65,8 +65,8 @@ snippet if "if control flow"
 		${0:${VISUAL}}
 	}
 
-snippet if "if control flow oneliner"
-	if ${1:<condition>};
+snippet if1 "if control flow oneliner"
+	${2:<statement>} if ${1:<condition>};
 
 snippet else "else control flow"
 	else
@@ -80,8 +80,8 @@ snippet unless "unless control flow"
 		${0:${VISUAL}}
 	}
 
-snippet unless "unless control flow oneliner"
-	unless ${1:<condition>};
+snippet unless1 "unless control flow oneliner"
+	${2:statement} unless ${1:<condition>};
 
 snippet while "while control flow"
 	while( ${1:<condition>} )
@@ -89,8 +89,8 @@ snippet while "while control flow"
 		${0:${VISUAL}}
 	}
 
-snippet while "while control flow oneliner"
-	while ${1:<condition>};
+snippet while1 "while control flow oneliner"
+	${2:<statement>} while ${1:<condition>};
 
 snippet until "until control flow"
 	until( ${1:<condition>} )
@@ -98,8 +98,8 @@ snippet until "until control flow"
 		${0:${VISUAL}}
 	}
 
-snippet until "until control flow oneliner"
-	until ${1:<condition>};
+snippet until1 "until control flow oneliner"
+	${2:<statement>} until ${1:<condition>};
 
 snippet for "for control flow"
 	for my ${1:<var>} ( ${2:<list>} )
@@ -107,8 +107,8 @@ snippet for "for control flow"
 		${0:${VISUAL}}
 	}
 
-snippet for "for control flow oneliner"
-	for ${1:<condition>};
+snippet for1 "for control flow oneliner"
+	${2:<statement>} for ${1:<condition>};
 
 snippet func "function"
 	sub ${1:<function name>}
