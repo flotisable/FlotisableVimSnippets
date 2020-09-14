@@ -15,11 +15,29 @@ snippet if "if control flow"
 		${0:${VISUAL}}
 	}
 
+snippet if1 "if control flow with one line content"
+	if( ${1:<condition>} )
+		${0:${VISUAL}}
+
+snippet ife "if else control flow"
+	if( ${1:<condition>} )
+	{
+		$2
+	}
+	else
+	{
+		$3
+	}
+
 snippet else "else control flow"
 	else
 	{
 		${0:${VISUAL}}
 	}
+
+snippet else1 "else control flow with one line content"
+	else
+		$0
 
 snippet for "for control flow"
 	for( ${1:<type>} ${2:<var>}${3: = ${4:<init>}}; ${5:<condition>} ; ${6:++${2}} )
