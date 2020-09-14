@@ -10,9 +10,21 @@ snippet setenv "enviroenment variable assignment"
 	setenv ${1:<var>} ${2:<value>}
 
 snippet if "if control flow"
-	if ( ${1:<condition>} )
+	if( ${1:<condition>} )
 
 		${0:${VISUAL}}
+
+	endif
+
+
+snippet ife "if else control flow"
+	if( ${1:<condition>} )
+
+		${2:<then branch>}
+
+	else
+
+		${3:<else branch>}
 
 	endif
 
