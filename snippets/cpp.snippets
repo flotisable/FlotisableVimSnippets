@@ -89,3 +89,15 @@ snippet class "class"
 			${2:<type>} ${3:<var>}
 			${0}
 	};
+
+snippet scast "static case"
+	static_cast<${1:<type>}>( ${2:<variable>} )
+
+snippet dcast "dynamic case"
+	dynamic_cast<${1:<type>}>( ${2:<variable>} )
+
+snippet ccast "const case"
+	const_cast<${1:<type>}>( ${2:<variable>} )
+
+snippet rcast "reinterpret case"
+	reinterpret_cast<${1:<type>}>( ${2:<variable>} )
