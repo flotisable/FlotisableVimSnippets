@@ -1,3 +1,4 @@
+version 1
 # basic structure
 snippet #! "shebang"
 	#!/bin/bash
@@ -6,7 +7,7 @@ snippet #! "shebang"
 snippet if "if control flow"
 	if [ ${1:<condition>} ]; then
 
-		${0:{VISUAL}}
+		${2:${VISUAL}}
 
 	fi
 
@@ -24,19 +25,19 @@ snippet ife "if else control flow"
 snippet while "while control flow"
 	while [ ${1:<condition>} ]; do
 
-		${0:{VISUAL}}
+		${2:${VISUAL}}
 
 	done
 
 snippet for "for control flow"
 	for ${1:<var>} in ${2:<list>}; do
 
-		${0:{VISUAL}}
+		${3:${VISUAL}}
 
 	done
 
 snippet func "function"
 	${1:<function name>}()
 	{
-		${0:{VISUAL}}
+		${2:${VISUAL}}
 	}
