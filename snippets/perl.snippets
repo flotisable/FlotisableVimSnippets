@@ -11,13 +11,13 @@ snippet pragma "default pragmas"
 snippet name "program name doc"
 	=head1 NAME
 
-	B<${1:program name}> - ${2:description}
+	B<${1:<program name>}> - ${2:<description>}
 	=cut
 
 snippet synopsis "synopsis doc"
 	=head1 SYNOPSIS
 
-	${1:synopsis}
+	${1:<synopsis>}
 	=cut
 
 snippet option "command line option doc"
@@ -25,7 +25,7 @@ snippet option "command line option doc"
 
 	=over
 	
-	=item I<${1:option}>
+	=item I<${1:<option>}>
 
 	=back
 	=cut
@@ -39,6 +39,21 @@ snippet getoptarray "command line options"
 	GetOptionsFromArray	( \${1:<array>},
 												${0}
 											) or die 'Invalid Option';
+
+snippet myopt "option hash"
+	my %options = (
+									${1:<option>} => ${2:<default>},${3}
+								);
+
+snippet mypat "pattern hash"
+	my %patterns = 	(
+										${1:<pattern>} => qr/${2:<regex>}/,${3}
+									);
+
+snippet myprog "program hash"
+	my %programs = 	(
+										${1:<program>} => "${2:<path>}",${3}
+									);
 # Moose
 snippet class "Moose class"
 	package ${1:<package name>};
@@ -62,7 +77,7 @@ snippet attr "object attribute"
 snippet if "if control flow"
 	if( ${1:<condition>} )
 	{
-		${0:${VISUAL}}
+		${2:${VISUAL}}
 	}
 
 snippet if1 "if control flow oneliner"
@@ -71,13 +86,13 @@ snippet if1 "if control flow oneliner"
 snippet else "else control flow"
 	else
 	{
-		${0:${VISUAL}}
+		${1:${VISUAL}}
 	}
 
 snippet unless "unless control flow"
 	unless( ${1:<condition>} )
 	{
-		${0:${VISUAL}}
+		${2:${VISUAL}}
 	}
 
 snippet unless1 "unless control flow oneliner"
@@ -86,7 +101,7 @@ snippet unless1 "unless control flow oneliner"
 snippet while "while control flow"
 	while( ${1:<condition>} )
 	{
-		${0:${VISUAL}}
+		${2:${VISUAL}}
 	}
 
 snippet while1 "while control flow oneliner"
@@ -95,7 +110,7 @@ snippet while1 "while control flow oneliner"
 snippet until "until control flow"
 	until( ${1:<condition>} )
 	{
-		${0:${VISUAL}}
+		${2:${VISUAL}}
 	}
 
 snippet until1 "until control flow oneliner"
@@ -104,7 +119,7 @@ snippet until1 "until control flow oneliner"
 snippet for "for control flow"
 	for my ${1:<var>} ( ${2:<list>} )
 	{
-		${0:${VISUAL}}
+		${3:${VISUAL}}
 	}
 
 snippet for1 "for control flow oneliner"
@@ -113,7 +128,7 @@ snippet for1 "for control flow oneliner"
 snippet func "function"
 	sub ${1:<function name>}
 	{
-		${0:${VISUAL}}
+		${2:${VISUAL}}
 	}
 
 snippet package "package"
