@@ -9,6 +9,7 @@ snippet main "main function"
 	}
 
 # basic syntax
+# control flow
 snippet if "if control flow"
 	if( ${1:<condition>} )
 	{
@@ -40,13 +41,13 @@ snippet else1 "else control flow with one line content"
 		${0}
 
 snippet for "for control flow"
-	for( ${1:<type>} ${2:<var>}${3: = ${4:<init>}}; ${5:<condition>} ; ${6:++${2}} )
+	for( ${1:int} ${2:i}${3: = ${4:0}}; ${5:<condition>} ; ${6:++${2}} )
 	{
 		${7:${VISUAL}}
 	}
 
-snippet range "range for control flow"
-	for( ${1:<type>} ${2:var}: ${3:container} )
+snippet fore "range for control flow"
+	for( ${1:<type>} ${2:<var>}: ${3:<container>} )
 	{
 		${4:${VISUAL}}
 	}
@@ -64,40 +65,108 @@ snippet do "do while control flow"
 
 	}while( ${1:condition} );
 
+# function
+snippet funcd "function declaration"
+	${1:void} ${2:<function name>}(${3});
+
 snippet func "function"
-	${1:<return type>} ${2:<function name>}(${3:<arguments>})
+	${1:void} ${2:<function name>}(${3})
 	{
 		${4:${VISUAL}}
 	}
 
+# class
 snippet struct "structure"
-	struct ${1:structure name}
+	struct ${1:<structure name>}
 	{
-		${2:<type>} ${3:<var>}
-		${0}
+		${2:${VISUAL}}
 	};
 
 snippet class "class"
-	class ${1:<class name>}
+	class ${1:`Filename('', '<class name>')`}
 	{
-		public:
-
-			${1}();
-
-		private:
-
-			${2:<type>} ${3:<var>}
-			${0}
+		${2:${VISUAL}}
 	};
 
+snippet ctord "constructor declaration"
+	${1:`Filename('', '<class name>')`}(${2});
+
+snippet ctor "constructor"
+	${1:`Filename('', '<class name>')`}::${1}(${2})
+	{
+		${2:${VISUAL}}
+	}
+
+snippet dtord "destructor declaration"
+	~${1:`Filename('', '<class name>')`}();
+
+snippet dtord "destructor declaration"
+	${1:`Filename('', '<class name>')`}::~${1}()
+	{
+		${2:${VISUAL}}
+	}
+
+snippet cpctord "copy constructor declaration"
+	${1:`Filename('', '<class name>')`}( const ${1} &rhs );
+
+snippet cpctor "copy constructor"
+	${1:`Filename('', '<class name>')`}::${1}( const ${1} &rhs )
+	{
+		${2:${VISUAL}}
+	}
+
+snippet cp=d "copy assignment declaration"
+	${1:`Filename('', '<class name>')`}& operator=( const ${1} &rhs );
+
+snippet cp= "copy assignment"
+	${1:`Filename('', '<class name>')`}& ${1}::operator=( const ${1} &rhs )
+	{
+		${2:${VISUAL}}
+	}
+
+snippet mvctord "move constructor declaration"
+	${1:`Filename('', '<class name>')`}( ${1} &&rhs );
+
+snippet mvctor "move constructor"
+	${1:`Filename('', '<class name>')`}::${1}( ${1} &&rhs )
+	{
+		${2:${VISUAL}}
+	}
+
+snippet mv=d "move assignment declaration"
+	${1:`Filename('', '<class name>')`}& operator=( ${1} &&rhs );
+
+snippet mv= "move assignment"
+	${1:`Filename('', '<class name>')`}& ${1}::operator=( ${1} &&rhs )
+	{
+		${2:${VISUAL}}
+	}
+
+snippet method "member function"
+	${1:`Filename('', <class name>)`}::${2:<method name>}(${3})
+	{
+		${4:${VISUAL}}
+	}
+
+# type casting
 snippet scast "static case"
-	static_cast<${1:<type>}>( ${2:<variable>} )
+	static_cast<${1:<type>}>(${2: ${VISUAL} })
 
 snippet dcast "dynamic case"
-	dynamic_cast<${1:<type>}>( ${2:<variable>} )
+	dynamic_cast<${1:<type>}>(${2: ${VISUAL} })
 
 snippet ccast "const case"
-	const_cast<${1:<type>}>( ${2:<variable>} )
+	const_cast<${1:<type>}>(${2: ${VISUAL} })
 
 snippet rcast "reinterpret case"
-	reinterpret_cast<${1:<type>}>( ${2:<variable>} )
+	reinterpret_cast<${1:<type>}>(${2: ${VISUAL} })
+
+# standar library
+snippet str "std::string"
+	std::string
+
+snippet vec "std::vector"
+	std::vector<${1:<type>}>
+
+snippet array "std::array"
+	std::array<${1:<type>}, ${2:<size>}>

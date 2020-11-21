@@ -4,18 +4,20 @@ snippet template "template of main source file"
 
 	int main()
 	{
+		${0}
+
 		return 0
 	}
 
 snippet header "template of header file"
 	#ifndef ${1:<protect macro>}
-	#define $1
+	#define ${1}
 
-	$0
+	${0}
 
 	#endif
 
 snippet source "template of source file"
 	#include "`Filename( '$1.h' )`"
 
-	$0
+	${0}
