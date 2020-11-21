@@ -11,7 +11,7 @@ snippet setenv "enviroenment variable assignment"
 	setenv ${1:<var>} ${2:<value>}
 
 snippet if "if control flow"
-	if( ${1:<condition>} )
+	if( ${1:<condition>} ) then
 
 		${0:${VISUAL}}
 
@@ -19,7 +19,7 @@ snippet if "if control flow"
 
 
 snippet ife "if else control flow"
-	if( ${1:<condition>} )
+	if( ${1:<condition>} ) then
 
 		${2:<then branch>}
 
@@ -29,7 +29,7 @@ snippet ife "if else control flow"
 
 	endif
 
-snippet foreach "foreach control flow"
+snippet fore "foreach control flow"
 	foreach ${1:<var>} ( ${2:<list>} )
 
 		${0:${VISUAL}}
