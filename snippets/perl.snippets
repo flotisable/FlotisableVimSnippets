@@ -11,13 +11,15 @@ snippet pragma "default pragmas"
 snippet name "program name doc"
 	=head1 NAME
 
-	B<${1:<program name>}> - ${2:<description>}
+	B<${1:`Filename( '$1.pl', '<program name>')`}> - ${2:<description>}
+
 	=cut
 
 snippet synopsis "synopsis doc"
 	=head1 SYNOPSIS
 
 	${1:<synopsis>}
+
 	=cut
 
 snippet option "command line option doc"
@@ -28,6 +30,7 @@ snippet option "command line option doc"
 	=item I<${1:<option>}>
 
 	=back
+
 	=cut
 
 snippet getopt "command line options"
@@ -41,9 +44,9 @@ snippet getoptarray "command line options"
 											) or die 'Invalid Option';
 
 snippet myopt "option hash"
-	my %options = (
-									${1:<option>} => ${2:<default>},${3}
-								);
+	my %opts = 	(
+								${1:<option>} => ${2:<default>},${3}
+							);
 
 snippet mypat "pattern hash"
 	my %patterns = 	(
@@ -56,7 +59,7 @@ snippet myprog "program hash"
 									);
 # Moose
 snippet class "Moose class"
-	package ${1:<package name>};
+	package ${1:`Filename( '', '<package name>}')`;
 
 	use Moose;
 
@@ -116,13 +119,13 @@ snippet until "until control flow"
 snippet until1 "until control flow oneliner"
 	${2:<statement>} until ${1:<condition>};
 
-snippet for "for control flow"
+snippet fore "foreach control flow"
 	for my ${1:<var>} ( ${2:<list>} )
 	{
 		${3:${VISUAL}}
 	}
 
-snippet for1 "for control flow oneliner"
+snippet fore1 "foreach control flow oneliner"
 	${2:<statement>} for ${1:<condition>};
 
 snippet func "function"
@@ -132,7 +135,7 @@ snippet func "function"
 	}
 
 snippet package "package"
-	package ${1:<package name>};
+	package ${1:`Filename( '', '<package name>')`};
 
 	${0:${VISUAL}}
 
@@ -147,7 +150,7 @@ snippet method "object method"
 	}
 
 snippet openr "open file for read"
-	open my ${1:<file handle>}, '<', ${2:<file name>};
+	open my ${1:$fh}, '<', ${2:<file name>};
 
 	while( <${1}> )
 	{
@@ -156,7 +159,7 @@ snippet openr "open file for read"
 	close ${1};
 
 snippet openw "open file for write"
-	open my ${1:<file handle>}, '>', ${2:<file name>};
+	open my ${1:$fh}, '>', ${2:<file name>};
 
 	${0:${VISUAL}}
 
