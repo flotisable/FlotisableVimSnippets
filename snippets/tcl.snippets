@@ -35,11 +35,12 @@ snippet ife "if else control flow"
 	}
 
 snippet for "for control flow"
-	for { ${1:<init>} } { ${2:<condition>} } { ${3:<next>} } {
+	for { ${1:set ${2:i} ${3:0}} } { ${4:<condition>} } { ${5:incr ${2}} } {
 
-		${4:${VISUAL}}
+		${6:${VISUAL}}
 	}
-snippet foreach "foreach control flow"
+
+snippet fore "foreach control flow"
 	foreach ${1:<var>} ${2:<list>} {
 
 		${3:${VISUAL}}
@@ -52,13 +53,27 @@ snippet while "while control flow"
 	}
 
 snippet func "function"
-	proc ${1:<function name>} { ${2:<arguments>} } {
+	proc ${1:<function name>} {${2:<arguments>}} {
 
 		${3:${VISUAL}}
 	}
 
-snippet lindex "get element of list"
+# list
+snippet li "get element of list"
 	lindex ${1:<list>} ${2:<index>}
 
-snippet lappend "append element to list"
+snippet la "append element to list"
 	lappend ${1:<list>} ${2:<element>}
+
+snippet ll "get length of list"
+	llength ${1:<list>}
+
+# dictionary
+snippet dc "create dictionary"
+	dict create ${1:<args>}
+
+snippet dg "get value in the dict"
+	dict get ${1:<dict>} ${2:<key>}
+
+snippet de "check existence of key"
+	dict exists ${1:<dict>} ${2:<key>}
