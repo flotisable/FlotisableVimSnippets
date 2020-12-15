@@ -38,28 +38,28 @@ snippet getopt "command line options"
 							${0}
 						) or die 'Invalid Option';
 
-snippet getoptarray "command line options"
+snippet getopta "command line options"
 	GetOptionsFromArray	( \${1:<array>},
 												${0}
 											) or die 'Invalid Option';
 
 snippet myopt "option hash"
-	my %opts = 	(
-								${1:<option>} => ${2:<default>},${3}
-							);
+	my %opts =  (
+	              ${1:<option>} => ${2:<default>},${3}
+	            );
 
 snippet mypat "pattern hash"
-	my %patterns = 	(
-										${1:<pattern>} => qr/${2:<regex>}/,${3}
-									);
+	my %patterns =  (
+	                  ${1:<pattern>} => qr/${2:<regex>}/,${3}
+	                );
 
 snippet myprog "program hash"
-	my %programs = 	(
-										${1:<program>} => "${2:<path>}",${3}
-									);
+	my %programs =  (
+	                  ${1:<program>} => "${2:<path>}",${3}
+	                );
 # Moose
 snippet class "Moose class"
-	package ${1:`Filename( '', '<package name>}')`;
+	package ${1:`Filename( '', '<package name>')`};
 
 	use Moose;
 
@@ -71,9 +71,9 @@ snippet class "Moose class"
 snippet attr "object attribute"
 	has ${1:<attribute name>} =>
 	(
-		is			=> 'rw',
-		isa			=> '${2:Maybe[${3:<type>}]}',
-		deafult	=> ${4:<deafult value>},
+		is      => 'rw',
+		isa     => '${2:Maybe[${3:<type>}]}',
+		default => ${4:<default value>},
 	);
 
 # basic syntax
@@ -150,7 +150,7 @@ snippet method "object method"
 	}
 
 snippet openr "open file for read"
-	open my ${1:$fh}, '<', ${2:<file name>};
+	open my ${1:\$fh}, '<', ${2:<file name>};
 
 	while( <${1}> )
 	{
@@ -159,7 +159,7 @@ snippet openr "open file for read"
 	close ${1};
 
 snippet openw "open file for write"
-	open my ${1:$fh}, '>', ${2:<file name>};
+	open my ${1:\$fh}, '>', ${2:<file name>};
 
 	${0:${VISUAL}}
 
