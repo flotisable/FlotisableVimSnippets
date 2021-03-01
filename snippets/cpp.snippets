@@ -151,16 +151,16 @@ snippet method "member function"
 
 # type casting
 snippet scast "static case"
-	static_cast<${1:<type>}>(${2: ${VISUAL} })
+	static_cast<${1:<type>}>( ${2:${VISUAL}} )
 
 snippet dcast "dynamic case"
-	dynamic_cast<${1:<type>}>(${2: ${VISUAL} })
+	dynamic_cast<${1:<type>}>( ${2:${VISUAL}} )
 
 snippet ccast "const case"
-	const_cast<${1:<type>}>(${2: ${VISUAL} })
+	const_cast<${1:<type>}>( ${2:${VISUAL}} )
 
 snippet rcast "reinterpret case"
-	reinterpret_cast<${1:<type>}>(${2: ${VISUAL} })
+	reinterpret_cast<${1:<type>}>( ${2:${VISUAL}} )
 
 # standar library
 snippet str "std::string"

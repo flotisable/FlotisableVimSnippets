@@ -18,7 +18,7 @@ snippet name "program name doc"
 snippet synopsis "synopsis doc"
 	=head1 SYNOPSIS
 
-	${1:<synopsis>}
+	${1:`Filename( '$1.pl', '<program name>')`} ${1:<synopsis>}
 
 	=cut
 
