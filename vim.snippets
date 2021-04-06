@@ -1,0 +1,27 @@
+version 1
+
+# basic syntax
+snippet if "if control flow"
+	if ${1:<condition>}
+	"
+		${2:${VISUAL}}
+	"
+	endif
+
+snippet ife "if else control flow"
+	if ${1:<condition>}
+	"
+		${2}
+	"
+	else
+	"
+		${3}
+	"
+	endif
+	
+snippet func "function definition"
+	function ${1:<function name>}(${2:<arguments>})
+	"
+		${3:${VISUAL}}
+	"
+	endfunction
