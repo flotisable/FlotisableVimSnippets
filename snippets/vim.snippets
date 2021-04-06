@@ -25,3 +25,11 @@ snippet func "function definition"
 		${3:${VISUAL}}
 	"
 	endfunction
+
+# vimrc structure
+snippet ifplug "add setting for a plugin"
+	if FlotisablePluginExists( '${1:<plugin name>}' )
+	"
+		${2:${VISUAL}}
+	"
+	endif
