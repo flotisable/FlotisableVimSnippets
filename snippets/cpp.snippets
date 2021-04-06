@@ -41,6 +41,20 @@ snippet else1 "else control flow with one line content"
 	else
 		${0}
 
+snippet switch "switch control flow"
+	switch ${1:<target>}
+	{
+		case ${2:<match>}:
+
+			${3:<action>}
+			break;
+
+		default:
+
+			${4:<default action>}
+			break;
+	}
+
 snippet for "for control flow"
 	for( ${1:int} ${2:i}${3: = ${4:0}}; ${5:<condition>} ; ${6:++${2}} )
 	{

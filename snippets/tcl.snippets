@@ -35,6 +35,19 @@ snippet ife "if else control flow"
 		${3:<else>}
 	}
 
+snippet switch "switch control flow"
+	switch ${1:<target>} {
+
+		${2:<match>} {
+
+			${3:<action>}
+		}
+		default {
+
+			${4:<default action>}
+		}
+	}
+
 snippet for "for control flow"
 	for { ${1:set ${2:i} ${3:0}} } { ${4:<condition>} } { ${5:incr ${2}} } {
 
