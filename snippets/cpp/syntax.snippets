@@ -1,15 +1,5 @@
 version 1
 
-# basic structure
-snippet main "main function"
-	int main(${1: int argc, char *argv[] })
-	{
-		${0:${VISUAL}}
-
-		return 0;
-	}
-
-# basic syntax
 # control flow
 snippet if "if control flow"
 	if( ${1:<condition>} )
@@ -176,12 +166,3 @@ snippet ccast "const case"
 snippet rcast "reinterpret case"
 	reinterpret_cast<${1:<type>}>( ${2:${VISUAL}} )
 
-# standar library
-snippet str "std::string"
-	std::string
-
-snippet vec "std::vector"
-	std::vector<${1:<type>}>
-
-snippet array "std::array"
-	std::array<${1:<type>}, ${2:<size>}>
