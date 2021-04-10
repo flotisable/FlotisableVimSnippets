@@ -2,19 +2,24 @@ version 1
 
 snippet template "template of perl script"
 	#!/usr/bin/perl
+	# pragmas
 	use strict;
 	use warnings;
+	# end pragmas
 
+	# standard modules
 	use Getopt::Long qw/GetOptionsFromArray/;
 	use Pod::Usage;
+	# end standard modules
 
+	# documentations
 	=head1 NAME
 
 	B<`Filename( "$1.pl" )`> - ${1:<brief description of program>}
 
 	=head1 SYNOPSIS
 
-		`Filename( "$1.pl" )` [options] ${2:<synopsis>}
+		`Filename( "$1.pl" )` [options]${2:<synopsis>}
 
 	=head1 OPTIONS
 
@@ -31,6 +36,7 @@ snippet template "template of perl script"
 	=back
 
 	=cut
+	# end documentations
 
 	sub main;
 
@@ -40,8 +46,7 @@ snippet template "template of perl script"
 	{
 		my @argv = @_;
 
-		GetOptionsFromArray	( \@argv,
-													${3:<options>},
+		GetOptionsFromArray	( \@argv,${3}
 													'h'    => sub { pod2usage()    },
 													'help' => sub { pod2usgae( 1 ) },
 												) or die "Invalid Option";

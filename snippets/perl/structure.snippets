@@ -8,31 +8,6 @@ snippet pragma "default pragmas"
 	use strict;
 	use warnings;
 
-snippet name "program name doc"
-	=head1 NAME
-
-	B<${1:`Filename( '$1.pl', '<program name>')`}> - ${2:<description>}
-
-	=cut
-
-snippet synopsis "synopsis doc"
-	=head1 SYNOPSIS
-
-	${1:`Filename( '$1.pl', '<program name>')`} ${1:<synopsis>}
-
-	=cut
-
-snippet option "command line option doc"
-	=head1 OPTIONS
-
-	=over
-	
-	=item I<${1:<option>}>
-
-	=back
-
-	=cut
-
 snippet getopt "command line options"
 	GetOptions(
 							${0}
@@ -57,6 +32,22 @@ snippet myprog "program hash"
 	my %programs =  (
 	                  ${1:<program>} => "${2:<path>}",${3}
 	                );
+snippet openr "open file for read"
+	open my ${1:\$fh}, '<', ${2:<file name>};
+
+	while( <${1}> )
+	{
+		${0:${VISUAL}}
+	}
+	close ${1};
+
+snippet openw "open file for write"
+	open my ${1:\$fh}, '>', ${2:<file name>};
+
+	${0:${VISUAL}}
+
+	close ${1}
+
 # Moose
 snippet class "Moose class"
 	package ${1:`Filename( '', '<package name>')`};
@@ -84,18 +75,56 @@ snippet method "object method"
 		${0:${VISUAL}}
 	}
 
-snippet openr "open file for read"
-	open my ${1:\$fh}, '<', ${2:<file name>};
+# documentation
+snippet docname "program name doc"
+	=head1 NAME
 
-	while( <${1}> )
-	{
-		${0:${VISUAL}}
-	}
-	close ${1};
+	B<${1:`Filename( '$1.pl', '<program name>')`}> - ${2:<description>}
 
-snippet openw "open file for write"
-	open my ${1:\$fh}, '>', ${2:<file name>};
+	=cut
 
-	${0:${VISUAL}}
+snippet docsyn "synopsis doc"
+	=head1 SYNOPSIS
 
-	close ${1}
+	${1:`Filename( '$1.pl', '<program name>')`} ${1:<synopsis>}
+
+	=cut
+
+snippet docopts "command line options doc"
+	=head1 OPTIONS
+
+	=over
+
+	=item I<${1:<option>}>
+
+	${2:<description>}
+
+	=back
+
+	=cut
+
+snippet docopt "command line option doc"
+	=item I<${1:<option>}>
+
+	${2:<description>}
+
+snippet docfunc "function doc"
+	=head3 ${1:<function name>}
+
+	${2:<description>}
+
+	=head4 Arguments
+
+	=over
+
+	=item I<${3:<argument>}>
+
+	${4:<argument description>}
+
+	=back
+
+	=head4 Return Value
+
+	${5:<return value description>}
+
+	=cut

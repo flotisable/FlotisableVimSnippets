@@ -43,9 +43,9 @@ snippet until1 "until control flow oneliner"
 	${2:<statement>} until ${1:<condition>};
 
 snippet fore "foreach control flow"
-	for my ${1:<var>} ( ${2:<list>} )
+	for ${1:my ${2:<var>} }( ${3:<list>} )
 	{
-		${3:${VISUAL}}
+		${4:${VISUAL}}
 	}
 
 snippet fore1 "foreach control flow oneliner"
