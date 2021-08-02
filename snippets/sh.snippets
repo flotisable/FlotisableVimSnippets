@@ -23,6 +23,13 @@ snippet ife "if else control flow"
 
 	fi
 
+snippet switch "switch control flow"
+	case ${1:<word>} in
+
+		${2:<pattern>}) ${3:<action>};;
+
+	esac
+
 snippet while "while control flow"
 	while [ ${1:<condition>} ]; do
 
