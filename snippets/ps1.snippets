@@ -1,0 +1,20 @@
+version 1
+
+# control flow
+snippet if "if control flow"
+	If( ${1:<condition>} )
+	{
+		${2:${VISUAL}}
+	}
+
+snippet fore "foreach control flow"
+	ForEach( ${1:<var>} in ${2:<list>} )
+	{
+		${3:${VISUAL}}
+	}
+
+snippet func "function definition"
+	Function ${1:<function name>}()
+	{
+		${1:${VISUAL}}
+	}
