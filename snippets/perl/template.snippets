@@ -19,7 +19,7 @@ snippet template "template of perl script"
 
 	=head1 SYNOPSIS
 
-		`Filename( "$1.pl" )` [options]${2:<synopsis>}
+		`Filename( "$1.pl" )` [options]${2}
 
 	=head1 OPTIONS
 
@@ -46,9 +46,9 @@ snippet template "template of perl script"
 	{
 		my @argv = @_;
 
-		GetOptionsFromArray	( \@argv,${3}
+		GetOptionsFromArray	( \\@argv,${3}
 													'h'    => sub { pod2usage()    },
-													'help' => sub { pod2usgae( 1 ) },
+													'help' => sub { pod2usage( 1 ) },
 												) or die "Invalid Option";
 
 		${0}
