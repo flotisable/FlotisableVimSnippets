@@ -1,0 +1,20 @@
+version 1
+
+# basic structure
+snippet #! "shebang"
+	#!/usr/bin/python
+
+# basic syntax
+snippet if "if control flow"
+	if ${1:<condition>}:
+		${2:${VISUAL}}
+
+snippet func "function definition"
+	def ${1:<function name>}(${2:<arguments>}):
+		${3:${VISUAL}}
+
+# structure
+snippet openr "read line of file one by one"
+	with open(${1:<file>}) as file:
+		for line in file:
+			${2:${VISUAL}}
