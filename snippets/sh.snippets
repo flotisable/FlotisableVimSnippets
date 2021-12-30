@@ -4,6 +4,27 @@ version 1
 snippet #! "shebang"
 	#!/bin/bash
 
+snippet usage "function to print help messages"
+	usage()
+	{
+		echo "Description:"
+		echo "  ${1:<descriptions>}"
+		echo
+		echo "Usage:"
+		echo "  \$0${2: [options]${3: <arguments>}}"
+		echo
+		echo "  Options:"
+		echo "    -h"
+		echo "      print this help message"${4}
+	}
+
+snippet getopt "process command line options"
+	while getopts "${1:h}" option; do
+
+		${2:'h') usage; exit;;}${3}
+		'*') echo "Error: Unknown option \$option" > /dev/stderr
+
+	done
 # basic syntax
 snippet if "if control flow"
 	if [ ${1:<condition>} ]; then
