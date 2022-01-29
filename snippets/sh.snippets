@@ -21,8 +21,12 @@ snippet usage "function to print help messages"
 snippet getopt "process command line options"
 	while getopts "${1:h}" option; do
 
-		${2:'h') usage; exit;;}${3}
-		'*') echo "Error: Unknown option \$option" > /dev/stderr
+		case \$option in
+
+			${2:'h') usage; exit;;}${3}
+			'*') echo "Error: Unknown option \$option" > /dev/stderr
+
+		esac
 
 	done
 # basic syntax
