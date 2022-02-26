@@ -29,6 +29,17 @@ snippet getopt "process command line options"
 		esac
 
 	done
+
+snippet setcolor "set ANSI color for output"
+	if [ -t 1 ]; then
+		tput setaf ${1:<color code>}
+	fi
+
+snippet resetcolor "reset ANSI color for output"
+	if [ -t 1 ]; then
+		tput op
+	fi
+
 # basic syntax
 snippet if "if control flow"
 	if [ ${1:<condition>} ]; then
