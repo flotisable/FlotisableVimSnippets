@@ -24,7 +24,7 @@ snippet getopt "process command line options"
 		case \$option in
 
 			${2:'h') usage; exit;;}${3}
-			'*') echo "Error: Unknown option \$option" > /dev/stderr
+			*)   echo "Warning: Unknown option \$option" > /dev/stderr;;
 
 		esac
 
