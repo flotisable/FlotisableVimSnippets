@@ -1,0 +1,161 @@
+{
+  "set": {
+    "prefix": "set",
+    "description": "\"variable assignment\"",
+    "body": [
+      "set ${1:<variable name>} ${2:<value>}",
+      ""
+    ]
+  },
+  "if": {
+    "prefix": "if",
+    "description": "\"if control flow\"",
+    "body": [
+      "if { ${1:<condition>} } {",
+      "",
+      "\t${2:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "if1": {
+    "prefix": "if1",
+    "description": "\"if control flow oneliner\"",
+    "body": [
+      "if { ${1:<condition>} } { ${2:${VISUAL}} }",
+      ""
+    ]
+  },
+  "else": {
+    "prefix": "else",
+    "description": "\"else control flow\"",
+    "body": [
+      "else {",
+      "",
+      "\t${1:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "description": "\"if else control flow\"",
+    "body": [
+      "if { ${1:<condition>} } {",
+      "",
+      "\t${2:<then>}",
+      "} else {",
+      "",
+      "\t${3:<else>}",
+      "}",
+      ""
+    ]
+  },
+  "switch": {
+    "prefix": "switch",
+    "description": "\"switch control flow\"",
+    "body": [
+      "switch ${1:<target>} {",
+      "",
+      "\t${2:<match>} {",
+      "",
+      "\t\t${3:<action>}",
+      "\t}",
+      "\tdefault {",
+      "",
+      "\t\t${4:<default action>}",
+      "\t}",
+      "}",
+      ""
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "description": "\"for control flow\"",
+    "body": [
+      "for { ${1:set ${2:i} ${3:0}} } { ${4:<condition>} } { ${5:incr $2} } {",
+      "",
+      "\t${6:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "fore": {
+    "prefix": "fore",
+    "description": "\"foreach control flow\"",
+    "body": [
+      "foreach ${1:<var>} ${2:<list>} {",
+      "",
+      "\t${3:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "while": {
+    "prefix": "while",
+    "description": "\"while control flow\"",
+    "body": [
+      "while { ${1:<condition>} } {",
+      "",
+      "\t${2:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "func": {
+    "prefix": "func",
+    "description": "\"function\"",
+    "body": [
+      "proc ${1:<function name>} {${2:<arguments>}} {",
+      "",
+      "\t${3:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "li": {
+    "prefix": "li",
+    "description": "\"get element of list\"",
+    "body": [
+      "lindex ${1:<list>} ${2:<index>}",
+      ""
+    ]
+  },
+  "la": {
+    "prefix": "la",
+    "description": "\"append element to list\"",
+    "body": [
+      "lappend ${1:<list>} ${2:<element>}",
+      ""
+    ]
+  },
+  "ll": {
+    "prefix": "ll",
+    "description": "\"get length of list\"",
+    "body": [
+      "llength ${1:<list>}",
+      ""
+    ]
+  },
+  "dc": {
+    "prefix": "dc",
+    "description": "\"create dictionary\"",
+    "body": [
+      "dict create ${1:<args>}",
+      ""
+    ]
+  },
+  "dg": {
+    "prefix": "dg",
+    "description": "\"get value in the dict\"",
+    "body": [
+      "dict get ${1:<dict>} ${2:<key>}",
+      ""
+    ]
+  },
+  "de": {
+    "prefix": "de",
+    "description": "\"check existence of key\"",
+    "body": "dict exists ${1:<dict>} ${2:<key>}"
+  }
+}

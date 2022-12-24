@@ -1,0 +1,131 @@
+{
+  "if": {
+    "prefix": "if",
+    "description": "\"if control flow\"",
+    "body": [
+      "if( ${1:<condition>} )",
+      "{",
+      "\t${2:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "if1": {
+    "prefix": "if1",
+    "description": "\"if control flow oneliner\"",
+    "body": [
+      "${2:<statement>} if ${1:<condition>};",
+      ""
+    ]
+  },
+  "else": {
+    "prefix": "else",
+    "description": "\"else control flow\"",
+    "body": [
+      "else",
+      "{",
+      "\t${1:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "unless": {
+    "prefix": "unless",
+    "description": "\"unless control flow\"",
+    "body": [
+      "unless( ${1:<condition>} )",
+      "{",
+      "\t${2:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "unless1": {
+    "prefix": "unless1",
+    "description": "\"unless control flow oneliner\"",
+    "body": [
+      "${2:statement} unless ${1:<condition>};",
+      ""
+    ]
+  },
+  "while": {
+    "prefix": "while",
+    "description": "\"while control flow\"",
+    "body": [
+      "while( ${1:<condition>} )",
+      "{",
+      "\t${2:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "while1": {
+    "prefix": "while1",
+    "description": "\"while control flow oneliner\"",
+    "body": [
+      "${2:<statement>} while ${1:<condition>};",
+      ""
+    ]
+  },
+  "until": {
+    "prefix": "until",
+    "description": "\"until control flow\"",
+    "body": [
+      "until( ${1:<condition>} )",
+      "{",
+      "\t${2:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "until1": {
+    "prefix": "until1",
+    "description": "\"until control flow oneliner\"",
+    "body": [
+      "${2:<statement>} until ${1:<condition>};",
+      ""
+    ]
+  },
+  "fore": {
+    "prefix": "fore",
+    "description": "\"foreach control flow\"",
+    "body": [
+      "for ${1:my ${2:<var>} }( ${3:<list>} )",
+      "{",
+      "\t${4:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "fore1": {
+    "prefix": "fore1",
+    "description": "\"foreach control flow oneliner\"",
+    "body": [
+      "${2:<statement>} for ${1:<condition>};",
+      ""
+    ]
+  },
+  "func": {
+    "prefix": "func",
+    "description": "\"function\"",
+    "body": [
+      "sub ${1:<function name>}",
+      "{",
+      "\t${2:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "package": {
+    "prefix": "package",
+    "description": "\"package\"",
+    "body": [
+      "package ${1:${VIM:Filename( '', '<package name>')}};",
+      "",
+      "${0:${VISUAL}}",
+      "",
+      "1;",
+      ""
+    ]
+  }
+}

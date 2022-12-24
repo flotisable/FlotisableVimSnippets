@@ -1,0 +1,53 @@
+{
+  "if": {
+    "prefix": "if",
+    "description": "\"if control flow\"",
+    "body": [
+      "if ${1:<condition>}",
+      "\"",
+      "\t${2:${VISUAL}}",
+      "\"",
+      "endif",
+      ""
+    ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "description": "\"if else control flow\"",
+    "body": [
+      "if ${1:<condition>}",
+      "\"",
+      "\t$2",
+      "\"",
+      "else",
+      "\"",
+      "\t$3",
+      "\"",
+      "endif",
+      ""
+    ]
+  },
+  "func": {
+    "prefix": "func",
+    "description": "\"function definition\"",
+    "body": [
+      "function ${1:<function name>}(${2:<arguments>})",
+      "\"",
+      "\t${3:${VISUAL}}",
+      "\"",
+      "endfunction",
+      ""
+    ]
+  },
+  "ifplug": {
+    "prefix": "ifplug",
+    "description": "\"add setting for a plugin\"",
+    "body": [
+      "if FlotisablePluginExists( '${1:<plugin name>}' )",
+      "\"",
+      "\t${2:${VISUAL}}",
+      "\"",
+      "endif"
+    ]
+  }
+}

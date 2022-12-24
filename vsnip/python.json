@@ -1,0 +1,37 @@
+{
+  "#!": {
+    "prefix": "#!",
+    "description": "\"shebang\"",
+    "body": [
+      "#!/usr/bin/python",
+      ""
+    ]
+  },
+  "if": {
+    "prefix": "if",
+    "description": "\"if control flow\"",
+    "body": [
+      "if ${1:<condition>}:",
+      "\t${2:${VISUAL}}",
+      ""
+    ]
+  },
+  "func": {
+    "prefix": "func",
+    "description": "\"function definition\"",
+    "body": [
+      "def ${1:<function name>}(${2:<arguments>}):",
+      "\t${3:${VISUAL}}",
+      ""
+    ]
+  },
+  "openr": {
+    "prefix": "openr",
+    "description": "\"read line of file one by one\"",
+    "body": [
+      "with open(${1:<file>}) as file:",
+      "\tfor line in file:",
+      "\t\t${2:${VISUAL}}"
+    ]
+  }
+}

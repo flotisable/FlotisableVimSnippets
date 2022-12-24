@@ -1,0 +1,212 @@
+{
+  "#!": {
+    "prefix": "#!",
+    "description": "\"shebang\"",
+    "body": [
+      "#!/usr/bin/perl",
+      ""
+    ]
+  },
+  "pragma": {
+    "prefix": "pragma",
+    "description": "\"default pragmas\"",
+    "body": [
+      "use strict;",
+      "use warnings;",
+      ""
+    ]
+  },
+  "getopt": {
+    "prefix": "getopt",
+    "description": "\"command line options\"",
+    "body": [
+      "GetOptions(",
+      "\t\t\t\t\t\t$0",
+      "\t\t\t\t\t) or die 'Invalid Option';",
+      ""
+    ]
+  },
+  "getopta": {
+    "prefix": "getopta",
+    "description": "\"command line options\"",
+    "body": [
+      "GetOptionsFromArray\t( \\${1:<array>},",
+      "\t\t\t\t\t\t\t\t\t\t\t$0",
+      "\t\t\t\t\t\t\t\t\t\t) or die 'Invalid Option';",
+      ""
+    ]
+  },
+  "myopt": {
+    "prefix": "myopt",
+    "description": "\"option hash\"",
+    "body": [
+      "my %opts =  (",
+      "              ${1:<option>} => ${2:<default>},$3",
+      "            );",
+      ""
+    ]
+  },
+  "mypat": {
+    "prefix": "mypat",
+    "description": "\"pattern hash\"",
+    "body": [
+      "my %patterns =  (",
+      "                  ${1:<pattern>} => qr/${2:<regex>}/,$3",
+      "                );",
+      ""
+    ]
+  },
+  "myprog": {
+    "prefix": "myprog",
+    "description": "\"program hash\"",
+    "body": [
+      "my %programs =  (",
+      "                  ${1:<program>} => \"${2:<path>}\",$3",
+      "                );"
+    ]
+  },
+  "openr": {
+    "prefix": "openr",
+    "description": "\"open file for read\"",
+    "body": [
+      "open my ${1:$fh}, '<', ${2:<file name>};",
+      "",
+      "while( <$1> )",
+      "{",
+      "\t${0:${VISUAL}}",
+      "}",
+      "close $1;",
+      ""
+    ]
+  },
+  "openw": {
+    "prefix": "openw",
+    "description": "\"open file for write\"",
+    "body": [
+      "open my ${1:$fh}, '>', ${2:<file name>};",
+      "",
+      "${0:${VISUAL}}",
+      "",
+      "close $1",
+      ""
+    ]
+  },
+  "class": {
+    "prefix": "class",
+    "description": "\"Moose class\"",
+    "body": [
+      "package ${1:${VIM:Filename( '', '<package name>')}};",
+      "",
+      "use Moose;",
+      "",
+      "${0:${VISUAL}}",
+      "",
+      "no Moose;",
+      "1;",
+      ""
+    ]
+  },
+  "attr": {
+    "prefix": "attr",
+    "description": "\"object attribute\"",
+    "body": [
+      "has ${1:<attribute name>} =>",
+      "(",
+      "\tis      => 'rw',",
+      "\tisa     => '${2:Maybe[${3:<type>}]}',",
+      "\tdefault => ${4:<default value>},",
+      ");",
+      ""
+    ]
+  },
+  "method": {
+    "prefix": "method",
+    "description": "\"object method\"",
+    "body": [
+      "sub ${1:<method name>}",
+      "{",
+      "\tmy $self = shift;",
+      "",
+      "\t${0:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "docname": {
+    "prefix": "docname",
+    "description": "\"program name doc\"",
+    "body": [
+      "=head1 NAME",
+      "",
+      "B<${1:${VIM:Filename( '$1.pl', '<program name>')}}> - ${2:<description>}",
+      "",
+      "=cut",
+      ""
+    ]
+  },
+  "docsyn": {
+    "prefix": "docsyn",
+    "description": "\"synopsis doc\"",
+    "body": [
+      "=head1 SYNOPSIS",
+      "",
+      "${1:${VIM:Filename( '$1.pl', '<program name>')}} ${2:<synopsis>}",
+      "",
+      "=cut",
+      ""
+    ]
+  },
+  "docopts": {
+    "prefix": "docopts",
+    "description": "\"command line options doc\"",
+    "body": [
+      "=head1 OPTIONS",
+      "",
+      "=over",
+      "",
+      "=item I<${1:<option>}>",
+      "",
+      "${2:<description>}",
+      "",
+      "=back",
+      "",
+      "=cut",
+      ""
+    ]
+  },
+  "docopt": {
+    "prefix": "docopt",
+    "description": "\"command line option doc\"",
+    "body": [
+      "=item I<${1:<option>}>",
+      "",
+      "${2:<description>}",
+      ""
+    ]
+  },
+  "docfunc": {
+    "prefix": "docfunc",
+    "description": "\"function doc\"",
+    "body": [
+      "=head3 ${1:<function name>}",
+      "",
+      "${2:<description>}",
+      "",
+      "=head4 Arguments",
+      "",
+      "=over",
+      "",
+      "=item I<${3:<argument>}>",
+      "",
+      "${4:<argument description>}",
+      "",
+      "=back",
+      "",
+      "=head4 Return Value",
+      "",
+      "${5:<return value description>}",
+      "",
+      "=cut"
+    ]
+  }
+}

@@ -1,0 +1,311 @@
+{
+  "if": {
+    "prefix": "if",
+    "description": "\"if control flow\"",
+    "body": [
+      "if( ${1:<condition>} )",
+      "{",
+      "\t${2:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "if1": {
+    "prefix": "if1",
+    "description": "\"if control flow with one line content\"",
+    "body": [
+      "if( ${1:<condition>} )",
+      "\t$0",
+      ""
+    ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "description": "\"if else control flow\"",
+    "body": [
+      "if( ${1:<condition>} )",
+      "{",
+      "\t$2",
+      "}",
+      "else",
+      "{",
+      "\t$3",
+      "}",
+      ""
+    ]
+  },
+  "else": {
+    "prefix": "else",
+    "description": "\"else control flow\"",
+    "body": [
+      "else",
+      "{",
+      "\t${1:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "else1": {
+    "prefix": "else1",
+    "description": "\"else control flow with one line content\"",
+    "body": [
+      "else",
+      "\t$0",
+      ""
+    ]
+  },
+  "switch": {
+    "prefix": "switch",
+    "description": "\"switch control flow\"",
+    "body": [
+      "switch( ${1:<target>} )",
+      "{",
+      "\tcase ${2:<match>}:",
+      "",
+      "\t\t${3:<action>}",
+      "\t\tbreak;",
+      "",
+      "\tdefault:",
+      "",
+      "\t\t${4:<default action>}",
+      "\t\tbreak;",
+      "}",
+      ""
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "description": "\"for control flow\"",
+    "body": [
+      "for( ${1:int} ${2:i}${3: = ${4:0}}; ${5:<condition>}; ${6:++$2} )",
+      "{",
+      "\t${7:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "fore": {
+    "prefix": "fore",
+    "description": "\"range for control flow\"",
+    "body": [
+      "for( ${1:<type>} ${2:<var>}: ${3:<container>} )",
+      "{",
+      "\t${4:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "while": {
+    "prefix": "while",
+    "description": "\"while control flow\"",
+    "body": [
+      "while( ${1:<condition>} )",
+      "{",
+      "\t${2:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "do": {
+    "prefix": "do",
+    "description": "\"do while control flow\"",
+    "body": [
+      "do",
+      "{",
+      "\t${2:${VISUAL}}",
+      "",
+      "}while( ${1:condition} );",
+      ""
+    ]
+  },
+  "funcd": {
+    "prefix": "funcd",
+    "description": "\"function declaration\"",
+    "body": [
+      "${1:void} ${2:<function name>}($3);",
+      ""
+    ]
+  },
+  "func": {
+    "prefix": "func",
+    "description": "\"function\"",
+    "body": [
+      "${1:void} ${2:<function name>}($3)",
+      "{",
+      "\t${4:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "struct": {
+    "prefix": "struct",
+    "description": "\"structure\"",
+    "body": [
+      "struct ${1:<structure name>}",
+      "{",
+      "\t${2:${VISUAL}}",
+      "};",
+      ""
+    ]
+  },
+  "class": {
+    "prefix": "class",
+    "description": "\"class\"",
+    "body": [
+      "class ${1:${VIM:Filename('', '<class name>')}}",
+      "{",
+      "\t${2:${VISUAL}}",
+      "};",
+      ""
+    ]
+  },
+  "ctord": {
+    "prefix": "ctord",
+    "description": "\"constructor declaration\"",
+    "body": [
+      "${1:${VIM:Filename('', '<class name>')}}($2);",
+      ""
+    ]
+  },
+  "ctor": {
+    "prefix": "ctor",
+    "description": "\"constructor\"",
+    "body": [
+      "${1:${VIM:Filename('', '<class name>')}}::$1($2)",
+      "{",
+      "\t${2:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "dtord": {
+    "prefix": "dtord",
+    "description": "\"destructor declaration\"",
+    "body": [
+      "${1:${VIM:Filename('', '<class name>')}}::~$1()",
+      "{",
+      "\t${2:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "cpctord": {
+    "prefix": "cpctord",
+    "description": "\"copy constructor declaration\"",
+    "body": [
+      "${1:${VIM:Filename('', '<class name>')}}( const $1 &rhs );",
+      ""
+    ]
+  },
+  "cpctor": {
+    "prefix": "cpctor",
+    "description": "\"copy constructor\"",
+    "body": [
+      "${1:${VIM:Filename('', '<class name>')}}::$1( const $1 &rhs )",
+      "{",
+      "\t${2:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "cp=d": {
+    "prefix": "cp=d",
+    "description": "\"copy assignment declaration\"",
+    "body": [
+      "${1:${VIM:Filename('', '<class name>')}}& operator=( const $1 &rhs );",
+      ""
+    ]
+  },
+  "cp=": {
+    "prefix": "cp=",
+    "description": "\"copy assignment\"",
+    "body": [
+      "${1:${VIM:Filename('', '<class name>')}}& $1::operator=( const $1 &rhs )",
+      "{",
+      "\t${2:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "mvctord": {
+    "prefix": "mvctord",
+    "description": "\"move constructor declaration\"",
+    "body": [
+      "${1:${VIM:Filename('', '<class name>')}}( $1 &&rhs );",
+      ""
+    ]
+  },
+  "mvctor": {
+    "prefix": "mvctor",
+    "description": "\"move constructor\"",
+    "body": [
+      "${1:${VIM:Filename('', '<class name>')}}::$1( $1 &&rhs )",
+      "{",
+      "\t${2:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "mv=d": {
+    "prefix": "mv=d",
+    "description": "\"move assignment declaration\"",
+    "body": [
+      "${1:${VIM:Filename('', '<class name>')}}& operator=( $1 &&rhs );",
+      ""
+    ]
+  },
+  "mv=": {
+    "prefix": "mv=",
+    "description": "\"move assignment\"",
+    "body": [
+      "${1:${VIM:Filename('', '<class name>')}}& $1::operator=( $1 &&rhs )",
+      "{",
+      "\t${2:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "method": {
+    "prefix": "method",
+    "description": "\"member function\"",
+    "body": [
+      "${1:${VIM:Filename('', <class name>)}}::${2:<method name>}($3)",
+      "{",
+      "\t${4:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "scast": {
+    "prefix": "scast",
+    "description": "\"static case\"",
+    "body": [
+      "static_cast<${1:<type>}>( ${2:${VISUAL}} )",
+      ""
+    ]
+  },
+  "dcast": {
+    "prefix": "dcast",
+    "description": "\"dynamic case\"",
+    "body": [
+      "dynamic_cast<${1:<type>}>( ${2:${VISUAL}} )",
+      ""
+    ]
+  },
+  "ccast": {
+    "prefix": "ccast",
+    "description": "\"const case\"",
+    "body": [
+      "const_cast<${1:<type>}>( ${2:${VISUAL}} )",
+      ""
+    ]
+  },
+  "rcast": {
+    "prefix": "rcast",
+    "description": "\"reinterpret case\"",
+    "body": [
+      "reinterpret_cast<${1:<type>}>( ${2:${VISUAL}} )",
+      ""
+    ]
+  }
+}

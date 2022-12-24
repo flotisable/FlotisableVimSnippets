@@ -1,0 +1,60 @@
+{
+  "if": {
+    "prefix": "if",
+    "description": "\"if control flow\"",
+    "body": [
+      "If( ${1:<condition>} )",
+      "{",
+      "\t${2:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "description": "\"if else control flow\"",
+    "body": [
+      "If( ${1:<condition>} )",
+      "{",
+      "\t${2:<then statements>}",
+      "}",
+      "Else",
+      "{",
+      "\t${3:<else statements>}",
+      "}",
+      ""
+    ]
+  },
+  "switch": {
+    "prefix": "switch",
+    "description": "\"switch control flow\"",
+    "body": [
+      "Switch( ${1:<test value>} )",
+      "{",
+      "\t${2:<condition>} { ${3:<action>} }",
+      "}",
+      ""
+    ]
+  },
+  "fore": {
+    "prefix": "fore",
+    "description": "\"foreach control flow\"",
+    "body": [
+      "ForEach( ${1:<var>} in ${2:<list>} )",
+      "{",
+      "\t${3:${VISUAL}}",
+      "}",
+      ""
+    ]
+  },
+  "func": {
+    "prefix": "func",
+    "description": "\"function definition\"",
+    "body": [
+      "Function ${1:<function name>}(${2:<arguments>})",
+      "{",
+      "\t${3:${VISUAL}}",
+      "}"
+    ]
+  }
+}

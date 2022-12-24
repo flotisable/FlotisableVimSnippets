@@ -1,0 +1,40 @@
+{
+  "template": {
+    "prefix": "template",
+    "description": "\"template of main source file\"",
+    "body": [
+      "#include <iostream>",
+      "using namespace std;",
+      "",
+      "int main()",
+      "{",
+      "\t$0",
+      "",
+      "\treturn 0;",
+      "}",
+      ""
+    ]
+  },
+  "header": {
+    "prefix": "header",
+    "description": "\"template of header file\"",
+    "body": [
+      "#ifndef ${1:<protect macro>}",
+      "#define $1",
+      "",
+      "$0",
+      "",
+      "#endif",
+      ""
+    ]
+  },
+  "source": {
+    "prefix": "source",
+    "description": "\"template of source file\"",
+    "body": [
+      "#include \"${VIM:Filename( '$1.h' )}\"",
+      "",
+      "$0"
+    ]
+  }
+}

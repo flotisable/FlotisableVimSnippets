@@ -1,0 +1,15 @@
+{
+  "main": {
+    "prefix": "main",
+    "description": "\"main function\"",
+    "body": [
+      "int main(${1: int argc, char *argv[] })",
+      "{",
+      "\t${0:${VISUAL}}",
+      "",
+      "\treturn 0;",
+      "}",
+      ""
+    ]
+  }
+}

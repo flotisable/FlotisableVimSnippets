@@ -1,0 +1,23 @@
+{
+  "author": {
+    "prefix": "author",
+    "description": "\"snippet author\"",
+    "body": [
+      "${VIM:g:snips_author}",
+      ""
+    ]
+  },
+  "pwd": {
+    "prefix": "pwd",
+    "description": "\"present working directory\"",
+    "body": [
+      "${VIM:getcwd()}",
+      ""
+    ]
+  },
+  "ls": {
+    "prefix": "ls",
+    "description": "\"list of pwd\"",
+    "body": "${VIM:glob('*')}"
+  }
+}
