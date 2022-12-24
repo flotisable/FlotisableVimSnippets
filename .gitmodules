@@ -1,0 +1,3 @@
+[submodule "snippet-converter.nvim"]
+	path = snippet-converter.nvim
+	url = https://github.com/smjonas/snippet-converter.nvim
