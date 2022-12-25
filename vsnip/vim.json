@@ -43,7 +43,18 @@
     "prefix": "ifplug",
     "description": "\"add setting for a plugin\"",
     "body": [
-      "if FlotisablePluginExists( '${1:<plugin name>}' )",
+      "if MyPluginExistsAndInRtp( '${1:<plugin name>}' )",
+      "\"",
+      "\t${2:${VISUAL}}",
+      "\"",
+      "endif"
+    ]
+  },
+  "ifplugl": {
+    "prefix": "ifplugl",
+    "description": "\"add setting for an ondemand loaded plugin\"",
+    "body": [
+      "if MyPluginExists( '${1:<plugin name>}', 0 )",
       "\"",
       "\t${2:${VISUAL}}",
       "\"",

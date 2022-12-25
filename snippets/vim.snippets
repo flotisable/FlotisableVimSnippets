@@ -28,7 +28,13 @@ snippet func "function definition"
 
 # vimrc structure
 snippet ifplug "add setting for a plugin"
-	if FlotisablePluginExists( '${1:<plugin name>}' )
+	if MyPluginExistsAndInRtp( '${1:<plugin name>}' )
+	"
+		${2:${VISUAL}}
+	"
+	endif
+snippet ifplugl "add setting for an ondemand loaded plugin"
+	if MyPluginExists( '${1:<plugin name>}', 0 )
 	"
 		${2:${VISUAL}}
 	"
