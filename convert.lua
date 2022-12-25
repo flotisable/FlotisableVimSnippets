@@ -1,145 +1,98 @@
-local scriptDir = vim.fn.fnamemodify( '%', ':h' )
-local vsnipDir  = scriptDir .. '/vsnip'
+local scriptDir   = vim.fn.fnamemodify( '%', ':h' )
+local vsnipDir    = table.concat( { scriptDir, 'vsnip'    }, '/' )
+local snipMateDir = table.concat( { scriptDir, 'snippets' }, '/' )
 
-vim.opt.runtimepath:append{ scriptDir .. '/snippet-converter.nvim' }
+local function upperFirstChar( str )
+  if str == '' then
+    do return '' end
+  end
+  return string.upper( string.sub( str,  1, 1 ) ) .. string.sub( str,  2 )
+end
+
+local function getTemplateName( dir, snippetName )
+  return 'snipMate' .. upperFirstChar( dir ) .. upperFirstChar( snippetName ) .. 'ToOther'
+end
+
+local function renameVsnipSnippet( fromName, toName )
+
+  local from  = table.concat( { vsnipDir, fromName  }, '/' )
+  local to    = table.concat( { vsnipDir, toName    }, '/' )
+
+  vim.schedule( function() vim.fn.rename( from, to ) end )
+
+end
+
+local function loopSnipMateDir( callback )
+  for dir, type in vim.fs.dir( snipMateDir ) do
+    if type == 'directory' then
+      callback( dir )
+    end
+  end
+end
+
+local function loopSnipMateSubdirFiles( dir, callback )
+  for file, type in vim.fs.dir( table.concat( { snipMateDir, dir }, '/' ) )  do
+    if type == 'file' then
+      callback( file, string.gsub( file, '.snippets', '' ) )
+    end
+  end
+end
+
+vim.opt.runtimepath:append{ table.concat( { scriptDir, 'snippet-converter.nvim' }, '/' ) }
 vim.opt.runtimepath:append{ scriptDir }
 
-local converter = require 'snippet_converter'
-
-converter.setup
+local templates =
 {
-  templates =
   {
-    {
-      name    = 'snipMateToOther',
-      sources = { snipmate = { './snippets' } },
-      output  = { vsnip = { vsnipDir, opts = { generate_package_json = false } } }
-    },
-    {
-      name    = 'snipMateCppStdlibToOther',
-      sources = { snipmate = { './snippets/cpp/stdlib.snippets' } },
-      output  =
-      {
-        vsnip =
-        {
-          vsnipDir .. '/stdlib',
-          opts = { generate_package_json = false }
-        }
-      }
-    },
-    {
-      name    = 'snipMateCppStructureToOther',
-      sources = { snipmate = { './snippets/cpp/structure.snippets' } },
-      output  =
-      {
-        vsnip =
-        {
-          vsnipDir .. '/structure',
-          opts = { generate_package_json = false }
-        }
-      }
-    },
-    {
-      name    = 'snipMateCppSyntaxToOther',
-      sources = { snipmate = { './snippets/cpp/syntax.snippets' } },
-      output  =
-      {
-        vsnip =
-        {
-          vsnipDir .. '/syntax',
-          opts = { generate_package_json = false }
-        }
-      }
-    },
-    {
-      name    = 'snipMateCppTemplateToOther',
-      sources = { snipmate = { './snippets/cpp/template.snippets' } },
-      output  =
-      {
-        vsnip =
-        {
-          vsnipDir .. '/template',
-          opts = { generate_package_json = false }
-        }
-      }
-    },
-    {
-      name    = 'snipMatePerlStructureToOther',
-      sources = { snipmate = { './snippets/perl/structure.snippets' } },
-      output  =
-      {
-        vsnip =
-        {
-          vsnipDir .. '/structure',
-          opts = { generate_package_json = false }
-        }
-      }
-    },
-    {
-      name    = 'snipMatePerlSyntaxToOther',
-      sources = { snipmate = { './snippets/perl/syntax.snippets' } },
-      output  =
-      {
-        vsnip =
-        {
-          vsnipDir .. '/syntax',
-          opts = { generate_package_json = false }
-        }
-      }
-    },
-    {
-      name    = 'snipMatePerlTemplateToOther',
-      sources = { snipmate = { './snippets/perl/template.snippets' } },
-      output  =
-      {
-        vsnip =
-        {
-          vsnipDir .. '/template',
-          opts = { generate_package_json = false }
-        }
-      }
-    },
-    {
-      name    = 'snipMateTclStructureToOther',
-      sources = { snipmate = { './snippets/tcl/structure.snippets' } },
-      output  =
-      {
-        vsnip =
-        {
-          vsnipDir .. '/structure',
-          opts = { generate_package_json = false }
-        }
-      }
-    },
-    {
-      name    = 'snipMateTclSyntaxToOther',
-      sources = { snipmate = { './snippets/tcl/syntax.snippets' } },
-      output  =
-      {
-        vsnip =
-        {
-          vsnipDir .. '/syntax',
-          opts = { generate_package_json = false }
-        }
-      }
-    },
+    name    = getTemplateName( '', '' ),
+    sources = { snipmate = { './snippets' } },
+    output  = { vsnip = { vsnipDir, opts = { generate_package_json = false } } }
   },
-  default_opts = { headless = true }
 }
-vim.cmd( 'ConvertSnippets snipMateToOther' )
-vim.schedule( function() vim.fn.rename( vsnipDir .. '/all.json', vsnipDir .. '/global.json' ) end )
+loopSnipMateDir( function( dir )
+  loopSnipMateSubdirFiles( dir, function( file, name )
 
-vim.cmd( 'ConvertSnippets snipMateCppStdlibToOther snipMateCppStructureToOther snipMateCppSyntaxToOther snipMateCppTemplateToOther' )
-vim.schedule( function() vim.fn.rename( vsnipDir .. '/stdlib/stdlib.json',        vsnipDir .. '/stdlib/cpp.json' ) end )
-vim.schedule( function() vim.fn.rename( vsnipDir .. '/structure/structure.json',  vsnipDir .. '/structure/cpp.json' ) end )
-vim.schedule( function() vim.fn.rename( vsnipDir .. '/syntax/syntax.json',        vsnipDir .. '/syntax/cpp.json' ) end )
-vim.schedule( function() vim.fn.rename( vsnipDir .. '/template/template.json',    vsnipDir .. '/template/cpp.json' ) end )
+    local template =
+    {
+      name    = getTemplateName( dir, name ),
+      sources = { snipmate = { table.concat( { snipMateDir, dir, file }, '/' ) } },
+      output  =
+      {
+        vsnip =
+        {
+          table.concat( { vsnipDir, name }, '/' ),
+          opts = { generate_package_json = false }
+        }
+      }
+    }
+    table.insert( templates, template )
 
-vim.cmd( 'ConvertSnippets snipMatePerlStructureToOther snipMatePerlSyntaxToOther snipMatePerlTemplateToOther' )
-vim.schedule( function() vim.fn.rename( vsnipDir .. '/structure/structure.json',  vsnipDir .. '/structure/perl.json' ) end )
-vim.schedule( function() vim.fn.rename( vsnipDir .. '/syntax/syntax.json',        vsnipDir .. '/syntax/perl.json' ) end )
-vim.schedule( function() vim.fn.rename( vsnipDir .. '/template/template.json',    vsnipDir .. '/template/perl.json' ) end )
+  end )
+end )
 
-vim.cmd( 'ConvertSnippets snipMateTclStructureToOther snipMateTclSyntaxToOther' )
-vim.schedule( function() vim.fn.rename( vsnipDir .. '/structure/structure.json',  vsnipDir .. '/structure/tcl.json' ) end )
-vim.schedule( function() vim.fn.rename( vsnipDir .. '/syntax/syntax.json',        vsnipDir .. '/syntax/tcl.json' ) end )
+require'snippet_converter'.setup
+{
+  templates     = templates,
+  default_opts  = { headless = true }
+}
+vim.cmd( 'ConvertSnippets ' .. getTemplateName( '', '' ) )
+renameVsnipSnippet( 'all.json', 'global.json' )
+
+loopSnipMateDir( function( dir )
+
+  local templates = {}
+  local datas     = {}
+
+  loopSnipMateSubdirFiles( dir, function( file, name )
+    table.insert( templates,  getTemplateName( dir, name )  )
+    table.insert( datas,      name                          )
+  end )
+
+  vim.cmd( 'ConvertSnippets ' .. table.concat( templates, ' ' ) )
+
+  for _, name in ipairs( datas )  do
+    renameVsnipSnippet( table.concat( { name, name  .. '.json' }, '/' ),
+                        table.concat( { name, dir   .. '.json' }, '/' ) )
+  end
+
+end )
