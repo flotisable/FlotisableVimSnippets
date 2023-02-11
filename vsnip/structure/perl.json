@@ -69,7 +69,7 @@
     "prefix": "openr",
     "description": "\"open file for read\"",
     "body": [
-      "open my ${1:$fh}, '<', ${2:<file name>};",
+      "open my ${1:\\$fh}, '<', ${2:<file name>};",
       "",
       "while( <$1> )",
       "{",
@@ -83,7 +83,7 @@
     "prefix": "openw",
     "description": "\"open file for write\"",
     "body": [
-      "open my ${1:$fh}, '>', ${2:<file name>};",
+      "open my ${1:\\$fh}, '>', ${2:<file name>};",
       "",
       "${0:$TM_SELECTED_TEXT}",
       "",
@@ -125,7 +125,7 @@
     "body": [
       "sub ${1:<method name>}",
       "{",
-      "\tmy $self = shift;",
+      "\tmy \\$self = shift;",
       "",
       "\t${0:$TM_SELECTED_TEXT}",
       "}",
