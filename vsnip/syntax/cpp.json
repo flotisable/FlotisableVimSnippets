@@ -269,9 +269,9 @@
     "prefix": "method",
     "description": "\"member function\"",
     "body": [
-      "${1:${VIM:Filename('', <class name>)}}::${2:<method name>}($3)",
+      "${1:<return type>} ${2:${VIM:Filename('', <class name>)}}::${3:<method name>}($4)",
       "{",
-      "\t${4:${VISUAL}}",
+      "\t${5:${VISUAL}}",
       "}",
       ""
     ]

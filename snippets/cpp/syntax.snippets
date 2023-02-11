@@ -148,9 +148,9 @@ snippet mv= "move assignment"
 	}
 
 snippet method "member function"
-	${1:`Filename('', <class name>)`}::${2:<method name>}(${3})
+	${1:<return type>} ${2:`Filename('', <class name>)`}::${3:<method name>}(${4})
 	{
-		${4:${VISUAL}}
+		${5:${VISUAL}}
 	}
 
 # type casting
