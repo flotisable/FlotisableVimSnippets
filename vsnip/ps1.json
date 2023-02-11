@@ -5,7 +5,7 @@
     "body": [
       "If( ${1:<condition>} )",
       "{",
-      "\t${2:${VISUAL}}",
+      "\t${2:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -42,7 +42,7 @@
     "body": [
       "ForEach( ${1:<var>} in ${2:<list>} )",
       "{",
-      "\t${3:${VISUAL}}",
+      "\t${3:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -53,7 +53,7 @@
     "body": [
       "Function ${1:<function name>}(${2:<arguments>})",
       "{",
-      "\t${3:${VISUAL}}",
+      "\t${3:$TM_SELECTED_TEXT}",
       "}"
     ]
   }

@@ -22,7 +22,7 @@
     "description": "\"shebang\"",
     "body": [
       "snippet #! \"shebang\"",
-      "\t${0:${VISUAL}}",
+      "\t${0:$TM_SELECTED_TEXT}",
       ""
     ]
   },
@@ -31,7 +31,7 @@
     "description": "\"set variable\"",
     "body": [
       "snippet set \"set variable\"",
-      "\t${0:${VISUAL}}",
+      "\t${0:$TM_SELECTED_TEXT}",
       ""
     ]
   },
@@ -40,7 +40,7 @@
     "description": "\"set environment variable\"",
     "body": [
       "snippet setenv \"set environment variable\"",
-      "\t${0:${VISUAL}}",
+      "\t${0:$TM_SELECTED_TEXT}",
       ""
     ]
   },
@@ -49,7 +49,7 @@
     "description": "\"if control flow\"",
     "body": [
       "snippet if \"if control flow\"",
-      "\t${0:${VISUAL}}",
+      "\t${0:$TM_SELECTED_TEXT}",
       ""
     ]
   },
@@ -58,7 +58,7 @@
     "description": "\"else control flow\"",
     "body": [
       "snippet else \"else control flow\"",
-      "\t${0:${VISUAL}}",
+      "\t${0:$TM_SELECTED_TEXT}",
       ""
     ]
   },
@@ -67,7 +67,7 @@
     "description": "\"if else control flow\"",
     "body": [
       "snippet ife \"if else control flow\"",
-      "\t${0:${VISUAL}}",
+      "\t${0:$TM_SELECTED_TEXT}",
       ""
     ]
   },
@@ -76,7 +76,7 @@
     "description": "\"switch control flow\"",
     "body": [
       "snippet switch \"switch control flow\"",
-      "\t${0:${VISUAL}}",
+      "\t${0:$TM_SELECTED_TEXT}",
       ""
     ]
   },
@@ -85,7 +85,7 @@
     "description": "\"for control flow\"",
     "body": [
       "snippet for \"for control flow\"",
-      "\t${0:${VISUAL}}",
+      "\t${0:$TM_SELECTED_TEXT}",
       ""
     ]
   },
@@ -94,7 +94,7 @@
     "description": "\"foreach control flow\"",
     "body": [
       "snippet fore \"foreach control flow\"",
-      "\t${0:${VISUAL}}",
+      "\t${0:$TM_SELECTED_TEXT}",
       ""
     ]
   },
@@ -103,7 +103,7 @@
     "description": "\"while control flow\"",
     "body": [
       "snippet while \"while control flow\"",
-      "\t${0:${VISUAL}}",
+      "\t${0:$TM_SELECTED_TEXT}",
       ""
     ]
   },
@@ -112,7 +112,7 @@
     "description": "\"function definition\"",
     "body": [
       "snippet func \"function definition\"",
-      "\t${0:${VISUAL}}",
+      "\t${0:$TM_SELECTED_TEXT}",
       ""
     ]
   },
@@ -121,7 +121,7 @@
     "description": "\"class definition\"",
     "body": [
       "snippet class \"class definition\"",
-      "\t${0:${VISUAL}}"
+      "\t${0:$TM_SELECTED_TEXT}"
     ]
   }
 }

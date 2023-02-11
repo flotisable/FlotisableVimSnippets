@@ -5,7 +5,7 @@
     "body": [
       "if( ${1:<condition>} )",
       "{",
-      "\t${2:${VISUAL}}",
+      "\t${2:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -24,7 +24,7 @@
     "body": [
       "else",
       "{",
-      "\t${1:${VISUAL}}",
+      "\t${1:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -35,7 +35,7 @@
     "body": [
       "unless( ${1:<condition>} )",
       "{",
-      "\t${2:${VISUAL}}",
+      "\t${2:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -54,7 +54,7 @@
     "body": [
       "while( ${1:<condition>} )",
       "{",
-      "\t${2:${VISUAL}}",
+      "\t${2:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -73,7 +73,7 @@
     "body": [
       "until( ${1:<condition>} )",
       "{",
-      "\t${2:${VISUAL}}",
+      "\t${2:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -92,7 +92,7 @@
     "body": [
       "for ${1:my ${2:<var>} }( ${3:<list>} )",
       "{",
-      "\t${4:${VISUAL}}",
+      "\t${4:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -111,7 +111,7 @@
     "body": [
       "sub ${1:<function name>}",
       "{",
-      "\t${2:${VISUAL}}",
+      "\t${2:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]

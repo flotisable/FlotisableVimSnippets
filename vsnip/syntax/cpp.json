@@ -5,7 +5,7 @@
     "body": [
       "if( ${1:<condition>} )",
       "{",
-      "\t${2:${VISUAL}}",
+      "\t${2:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -40,7 +40,7 @@
     "body": [
       "else",
       "{",
-      "\t${1:${VISUAL}}",
+      "\t${1:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -79,7 +79,7 @@
     "body": [
       "for( ${1:int} ${2:i}${3: = ${4:0}}; ${5:<condition>}; ${6:++$2} )",
       "{",
-      "\t${7:${VISUAL}}",
+      "\t${7:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -90,7 +90,7 @@
     "body": [
       "for( ${1:<type>} ${2:<var>}: ${3:<container>} )",
       "{",
-      "\t${4:${VISUAL}}",
+      "\t${4:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -101,7 +101,7 @@
     "body": [
       "while( ${1:<condition>} )",
       "{",
-      "\t${2:${VISUAL}}",
+      "\t${2:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -112,7 +112,7 @@
     "body": [
       "do",
       "{",
-      "\t${2:${VISUAL}}",
+      "\t${2:$TM_SELECTED_TEXT}",
       "",
       "}while( ${1:condition} );",
       ""
@@ -132,7 +132,7 @@
     "body": [
       "${1:void} ${2:<function name>}($3)",
       "{",
-      "\t${4:${VISUAL}}",
+      "\t${4:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -143,7 +143,7 @@
     "body": [
       "struct ${1:<structure name>}",
       "{",
-      "\t${2:${VISUAL}}",
+      "\t${2:$TM_SELECTED_TEXT}",
       "};",
       ""
     ]
@@ -280,7 +280,7 @@
     "prefix": "scast",
     "description": "\"static case\"",
     "body": [
-      "static_cast<${1:<type>}>( ${2:${VISUAL}} )",
+      "static_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )",
       ""
     ]
   },
@@ -288,7 +288,7 @@
     "prefix": "dcast",
     "description": "\"dynamic case\"",
     "body": [
-      "dynamic_cast<${1:<type>}>( ${2:${VISUAL}} )",
+      "dynamic_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )",
       ""
     ]
   },
@@ -296,7 +296,7 @@
     "prefix": "ccast",
     "description": "\"const case\"",
     "body": [
-      "const_cast<${1:<type>}>( ${2:${VISUAL}} )",
+      "const_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )",
       ""
     ]
   },
@@ -304,7 +304,7 @@
     "prefix": "rcast",
     "description": "\"reinterpret case\"",
     "body": [
-      "reinterpret_cast<${1:<type>}>( ${2:${VISUAL}} )",
+      "reinterpret_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )",
       ""
     ]
   }

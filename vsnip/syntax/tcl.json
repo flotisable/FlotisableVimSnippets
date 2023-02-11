@@ -13,7 +13,7 @@
     "body": [
       "if { ${1:<condition>} } {",
       "",
-      "\t${2:${VISUAL}}",
+      "\t${2:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -22,7 +22,7 @@
     "prefix": "if1",
     "description": "\"if control flow oneliner\"",
     "body": [
-      "if { ${1:<condition>} } { ${2:${VISUAL}} }",
+      "if { ${1:<condition>} } { ${2:$TM_SELECTED_TEXT} }",
       ""
     ]
   },
@@ -32,7 +32,7 @@
     "body": [
       "else {",
       "",
-      "\t${1:${VISUAL}}",
+      "\t${1:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -75,7 +75,7 @@
     "body": [
       "for { ${1:set ${2:i} ${3:0}} } { ${4:<condition>} } { ${5:incr $2} } {",
       "",
-      "\t${6:${VISUAL}}",
+      "\t${6:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -86,7 +86,7 @@
     "body": [
       "foreach ${1:<var>} ${2:<list>} {",
       "",
-      "\t${3:${VISUAL}}",
+      "\t${3:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -97,7 +97,7 @@
     "body": [
       "while { ${1:<condition>} } {",
       "",
-      "\t${2:${VISUAL}}",
+      "\t${2:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
@@ -108,7 +108,7 @@
     "body": [
       "proc ${1:<function name>} {${2:<arguments>}} {",
       "",
-      "\t${3:${VISUAL}}",
+      "\t${3:$TM_SELECTED_TEXT}",
       "}",
       ""
     ]
