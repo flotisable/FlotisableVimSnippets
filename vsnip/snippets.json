@@ -13,7 +13,7 @@
     "body": [
       "snippet ${1:<trigger>} ${2:<description>}",
       "\tsnippet $1 $2",
-      "\t\t${0:${VISUAL}}",
+      "\t\t\\${0:\\${VISUAL\\}\\}",
       ""
     ]
   },
