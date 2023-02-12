@@ -14,5 +14,18 @@
       "if { ![info exists env(${1:<variable name>})] } { set env($1) ${2:<value>} }",
       ""
     ]
+  },
+  "openr": {
+    "prefix": "openr",
+    "description": "\"open file and read line by line\"",
+    "body": [
+      "set file [open \"${1:<file name>}\"]",
+      "",
+      "foreach line [split [read \\$file] \"n\"] {",
+      "",
+      "\t${2:$TM_SELECTED_TEXT}",
+      "\\}",
+      "close \\$file"
+    ]
   }
 }
