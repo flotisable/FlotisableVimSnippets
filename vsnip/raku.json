@@ -1,0 +1,103 @@
+{
+  "if": {
+    "prefix": "if",
+    "description": "\"if control flow\"",
+    "body": [
+      "if ${1:<condition>}",
+      "{",
+      "\t${2:$TM_SELECTED_TEXT}",
+      "}"
+    ]
+  },
+  "else": {
+    "prefix": "else",
+    "description": "\"else control flow\"",
+    "body": [
+      "else",
+      "{",
+      "\t${1:$TM_SELECTED_TEXT}",
+      "}"
+    ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "description": "\"if else control flow\"",
+    "body": [
+      "if ${1:<condition>}",
+      "{",
+      "\t${2:<if statements>}",
+      "}",
+      "else",
+      "{",
+      "\t${3:<else statements>}",
+      "}"
+    ]
+  },
+  "switch": {
+    "prefix": "switch",
+    "description": "\"switch control flow\"",
+    "body": [
+      "given ${1:<target>}",
+      "{",
+      "\twhen ${2:<match>}",
+      "\t{",
+      "\t\t${3:<action>}",
+      "\t}",
+      "\tdefault",
+      "\t{",
+      "\t\t${4:<default action>}",
+      "\t}",
+      "}"
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "description": "\"for control flow\"",
+    "body": [
+      "loop( ${1:my \\$${2:i}}${3: = ${4:0}}; ${5:<condition>}; ${6:++\\$$2} )",
+      "{",
+      "\t${7:$TM_SELECTED_TEXT}",
+      "}"
+    ]
+  },
+  "fore": {
+    "prefix": "fore",
+    "description": "\"foreach control flow\"",
+    "body": [
+      "for ${1:<iterable container>}",
+      "{",
+      "\t${2:$TM_SELECTED_TEXT}",
+      "}"
+    ]
+  },
+  "while": {
+    "prefix": "while",
+    "description": "\"while control flow\"",
+    "body": [
+      "while ${1:<condition>}",
+      "{",
+      "\t${2:$TM_SELECTED_TEXT}",
+      "}"
+    ]
+  },
+  "func": {
+    "prefix": "func",
+    "description": "\"function definition\"",
+    "body": [
+      "sub ${1:<function name>}",
+      "{",
+      "\t${2:$TM_SELECTED_TEXT}",
+      "}"
+    ]
+  },
+  "class": {
+    "prefix": "class",
+    "description": "\"class definition\"",
+    "body": [
+      "class ${1:$TM_FILENAME_BASE}",
+      "{",
+      "\t${2:$TM_SELECTED_TEXT}",
+      "}"
+    ]
+  }
+}
