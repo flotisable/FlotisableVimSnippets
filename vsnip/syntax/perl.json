@@ -6,16 +6,14 @@
       "if( ${1:<condition>} )",
       "{",
       "\t${2:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "if1": {
     "prefix": "if1",
     "description": "\"if control flow oneliner\"",
     "body": [
-      "${2:<statement>} if ${1:<condition>};",
-      ""
+      "${2:<statement>} if ${1:<condition>};"
     ]
   },
   "else": {
@@ -25,8 +23,7 @@
       "else",
       "{",
       "\t${1:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "unless": {
@@ -36,16 +33,14 @@
       "unless( ${1:<condition>} )",
       "{",
       "\t${2:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "unless1": {
     "prefix": "unless1",
     "description": "\"unless control flow oneliner\"",
     "body": [
-      "${2:statement} unless ${1:<condition>};",
-      ""
+      "${2:statement} unless ${1:<condition>};"
     ]
   },
   "while": {
@@ -55,16 +50,14 @@
       "while( ${1:<condition>} )",
       "{",
       "\t${2:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "while1": {
     "prefix": "while1",
     "description": "\"while control flow oneliner\"",
     "body": [
-      "${2:<statement>} while ${1:<condition>};",
-      ""
+      "${2:<statement>} while ${1:<condition>};"
     ]
   },
   "until": {
@@ -74,16 +67,14 @@
       "until( ${1:<condition>} )",
       "{",
       "\t${2:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "until1": {
     "prefix": "until1",
     "description": "\"until control flow oneliner\"",
     "body": [
-      "${2:<statement>} until ${1:<condition>};",
-      ""
+      "${2:<statement>} until ${1:<condition>};"
     ]
   },
   "fore": {
@@ -93,16 +84,14 @@
       "for ${1:my ${2:<var>} }( ${3:<list>} )",
       "{",
       "\t${4:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "fore1": {
     "prefix": "fore1",
     "description": "\"foreach control flow oneliner\"",
     "body": [
-      "${2:<statement>} for ${1:<condition>};",
-      ""
+      "${2:<statement>} for ${1:<condition>};"
     ]
   },
   "func": {
@@ -112,20 +101,18 @@
       "sub ${1:<function name>}",
       "{",
       "\t${2:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "package": {
     "prefix": "package",
     "description": "\"package\"",
     "body": [
-      "package ${1:${VIM:Filename( '', '<package name>')}};",
+      "package ${1:$TM_FILENAME_BASE};",
       "",
-      "${0:${VISUAL}}",
+      "${0:$TM_SELECTED_TEXT}",
       "",
-      "1;",
-      ""
+      "1;"
     ]
   }
 }

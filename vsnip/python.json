@@ -3,8 +3,7 @@
     "prefix": "#!",
     "description": "\"shebang\"",
     "body": [
-      "#!/usr/bin/python",
-      ""
+      "#!/usr/bin/python"
     ]
   },
   "if": {
@@ -12,8 +11,7 @@
     "description": "\"if control flow\"",
     "body": [
       "if ${1:<condition>}:",
-      "\t${2:$TM_SELECTED_TEXT}",
-      ""
+      "\t${2:$TM_SELECTED_TEXT}"
     ]
   },
   "func": {
@@ -21,8 +19,7 @@
     "description": "\"function definition\"",
     "body": [
       "def ${1:<function name>}(${2:<arguments>}):",
-      "\t${3:$TM_SELECTED_TEXT}",
-      ""
+      "\t${3:$TM_SELECTED_TEXT}"
     ]
   },
   "openr": {

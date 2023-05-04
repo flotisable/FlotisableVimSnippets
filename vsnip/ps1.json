@@ -6,8 +6,7 @@
       "If( ${1:<condition>} )",
       "{",
       "\t${2:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "ife": {
@@ -21,8 +20,7 @@
       "Else",
       "{",
       "\t${3:<else statements>}",
-      "}",
-      ""
+      "}"
     ]
   },
   "switch": {
@@ -32,8 +30,7 @@
       "Switch( ${1:<test value>} )",
       "{",
       "\t${2:<condition>} { ${3:<action>} }",
-      "}",
-      ""
+      "}"
     ]
   },
   "fore": {
@@ -43,8 +40,7 @@
       "ForEach( ${1:<var>} in ${2:<list>} )",
       "{",
       "\t${3:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "func": {

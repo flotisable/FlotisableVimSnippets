@@ -3,8 +3,7 @@
     "prefix": "#!",
     "description": "\"shebang\"",
     "body": [
-      "#!/usr/bin/perl",
-      ""
+      "#!/usr/bin/perl"
     ]
   },
   "pragma": {
@@ -12,8 +11,7 @@
     "description": "\"default pragmas\"",
     "body": [
       "use strict;",
-      "use warnings;",
-      ""
+      "use warnings;"
     ]
   },
   "getopt": {
@@ -22,8 +20,7 @@
     "body": [
       "GetOptions(",
       "\t\t\t\t\t\t$0",
-      "\t\t\t\t\t) or die 'Invalid Option';",
-      ""
+      "\t\t\t\t\t) or die 'Invalid Option';"
     ]
   },
   "getopta": {
@@ -32,8 +29,7 @@
     "body": [
       "GetOptionsFromArray\t( \\${1:<array>},",
       "\t\t\t\t\t\t\t\t\t\t\t$0",
-      "\t\t\t\t\t\t\t\t\t\t) or die 'Invalid Option';",
-      ""
+      "\t\t\t\t\t\t\t\t\t\t) or die 'Invalid Option';"
     ]
   },
   "myopt": {
@@ -42,8 +38,7 @@
     "body": [
       "my %opts =  (",
       "              ${1:<option>} => ${2:<default>},$3",
-      "            );",
-      ""
+      "            );"
     ]
   },
   "mypat": {
@@ -52,8 +47,7 @@
     "body": [
       "my %patterns =  (",
       "                  ${1:<pattern>} => qr/${2:<regex>}/,$3",
-      "                );",
-      ""
+      "                );"
     ]
   },
   "myprog": {
@@ -75,8 +69,7 @@
       "{",
       "\t${0:$TM_SELECTED_TEXT}",
       "}",
-      "close $1;",
-      ""
+      "close $1;"
     ]
   },
   "openw": {
@@ -87,23 +80,21 @@
       "",
       "${0:$TM_SELECTED_TEXT}",
       "",
-      "close $1",
-      ""
+      "close $1"
     ]
   },
   "class": {
     "prefix": "class",
     "description": "\"Moose class\"",
     "body": [
-      "package ${1:${VIM:Filename( '', '<package name>')}};",
+      "package ${1:$TM_FILENAME_BASE};",
       "",
       "use Moose;",
       "",
       "${0:${VISUAL}}",
       "",
       "no Moose;",
-      "1;",
-      ""
+      "1;"
     ]
   },
   "attr": {
@@ -115,8 +106,7 @@
       "\tis      => 'rw',",
       "\tisa     => '${2:Maybe[${3:<type>}]}',",
       "\tdefault => ${4:<default value>},",
-      ");",
-      ""
+      ");"
     ]
   },
   "method": {
@@ -128,8 +118,7 @@
       "\tmy \\$self = shift;",
       "",
       "\t${0:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "docname": {
@@ -138,10 +127,9 @@
     "body": [
       "=head1 NAME",
       "",
-      "B<${1:${VIM:Filename( '$1.pl', '<program name>')}}> - ${2:<description>}",
+      "B<${1:$TM_FILENAME}> - ${2:<description>}",
       "",
-      "=cut",
-      ""
+      "=cut"
     ]
   },
   "docsyn": {
@@ -150,10 +138,9 @@
     "body": [
       "=head1 SYNOPSIS",
       "",
-      "${1:${VIM:Filename( '$1.pl', '<program name>')}} ${2:<synopsis>}",
+      "${1:$TM_FILENAME} ${2:<synopsis>}",
       "",
-      "=cut",
-      ""
+      "=cut"
     ]
   },
   "docopts": {
@@ -170,8 +157,7 @@
       "",
       "=back",
       "",
-      "=cut",
-      ""
+      "=cut"
     ]
   },
   "docopt": {
@@ -180,8 +166,7 @@
     "body": [
       "=item I<${1:<option>}>",
       "",
-      "${2:<description>}",
-      ""
+      "${2:<description>}"
     ]
   },
   "docfunc": {

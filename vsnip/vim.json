@@ -7,8 +7,7 @@
       "\"",
       "\t${2:$TM_SELECTED_TEXT}",
       "\"",
-      "endif",
-      ""
+      "endif"
     ]
   },
   "ife": {
@@ -23,8 +22,7 @@
       "\"",
       "\t$3",
       "\"",
-      "endif",
-      ""
+      "endif"
     ]
   },
   "func": {
@@ -35,8 +33,7 @@
       "\"",
       "\t${3:$TM_SELECTED_TEXT}",
       "\"",
-      "endfunction",
-      ""
+      "endfunction"
     ]
   },
   "ifplug": {

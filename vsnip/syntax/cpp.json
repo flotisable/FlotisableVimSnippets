@@ -6,8 +6,7 @@
       "if( ${1:<condition>} )",
       "{",
       "\t${2:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "if1": {
@@ -15,8 +14,7 @@
     "description": "\"if control flow with one line content\"",
     "body": [
       "if( ${1:<condition>} )",
-      "\t$0",
-      ""
+      "\t$0"
     ]
   },
   "ife": {
@@ -30,8 +28,7 @@
       "else",
       "{",
       "\t$3",
-      "}",
-      ""
+      "}"
     ]
   },
   "else": {
@@ -41,8 +38,7 @@
       "else",
       "{",
       "\t${1:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "else1": {
@@ -50,8 +46,7 @@
     "description": "\"else control flow with one line content\"",
     "body": [
       "else",
-      "\t$0",
-      ""
+      "\t$0"
     ]
   },
   "switch": {
@@ -69,8 +64,7 @@
       "",
       "\t\t${4:<default action>}",
       "\t\tbreak;",
-      "}",
-      ""
+      "}"
     ]
   },
   "for": {
@@ -80,8 +74,7 @@
       "for( ${1:int} ${2:i}${3: = ${4:0}}; ${5:<condition>}; ${6:++$2} )",
       "{",
       "\t${7:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "fore": {
@@ -91,8 +84,7 @@
       "for( ${1:<type>} ${2:<var>}: ${3:<container>} )",
       "{",
       "\t${4:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "while": {
@@ -102,8 +94,7 @@
       "while( ${1:<condition>} )",
       "{",
       "\t${2:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "do": {
@@ -114,16 +105,14 @@
       "{",
       "\t${2:$TM_SELECTED_TEXT}",
       "",
-      "}while( ${1:condition} );",
-      ""
+      "}while( ${1:condition} );"
     ]
   },
   "funcd": {
     "prefix": "funcd",
     "description": "\"function declaration\"",
     "body": [
-      "${1:void} ${2:<function name>}($3);",
-      ""
+      "${1:void} ${2:<function name>}($3);"
     ]
   },
   "func": {
@@ -133,8 +122,7 @@
       "${1:void} ${2:<function name>}($3)",
       "{",
       "\t${4:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "struct": {
@@ -144,168 +132,150 @@
       "struct ${1:<structure name>}",
       "{",
       "\t${2:$TM_SELECTED_TEXT}",
-      "};",
-      ""
+      "};"
     ]
   },
   "class": {
     "prefix": "class",
     "description": "\"class\"",
     "body": [
-      "class ${1:${VIM:Filename('', '<class name>')}}",
+      "class ${1:$TM_FILENAME_BASE}",
       "{",
-      "\t${2:${VISUAL}}",
-      "};",
-      ""
+      "\t${2:$TM_SELECTED_TEXT}",
+      "};"
     ]
   },
   "ctord": {
     "prefix": "ctord",
     "description": "\"constructor declaration\"",
     "body": [
-      "${1:${VIM:Filename('', '<class name>')}}($2);",
-      ""
+      "${1:$TM_FILENAME_BASE}($2);"
     ]
   },
   "ctor": {
     "prefix": "ctor",
     "description": "\"constructor\"",
     "body": [
-      "${1:${VIM:Filename('', '<class name>')}}::$1($2)",
+      "${1:$TM_FILENAME_BASE}::$1($2)",
       "{",
-      "\t${2:${VISUAL}}",
-      "}",
-      ""
+      "\t${2:$TM_SELECTED_TEXT}",
+      "}"
     ]
   },
   "dtord": {
     "prefix": "dtord",
     "description": "\"destructor declaration\"",
     "body": [
-      "${1:${VIM:Filename('', '<class name>')}}::~$1()",
+      "${1:$TM_FILENAME_BASE}::~$1()",
       "{",
-      "\t${2:${VISUAL}}",
-      "}",
-      ""
+      "\t${2:$TM_SELECTED_TEXT}",
+      "}"
     ]
   },
   "cpctord": {
     "prefix": "cpctord",
     "description": "\"copy constructor declaration\"",
     "body": [
-      "${1:${VIM:Filename('', '<class name>')}}( const $1 &rhs );",
-      ""
+      "${1:$TM_FILENAME_BASE}( const $1 &rhs );"
     ]
   },
   "cpctor": {
     "prefix": "cpctor",
     "description": "\"copy constructor\"",
     "body": [
-      "${1:${VIM:Filename('', '<class name>')}}::$1( const $1 &rhs )",
+      "${1:$TM_FILENAME_BASE}::$1( const $1 &rhs )",
       "{",
-      "\t${2:${VISUAL}}",
-      "}",
-      ""
+      "\t${2:$TM_SELECTED_TEXT}",
+      "}"
     ]
   },
   "cp=d": {
     "prefix": "cp=d",
     "description": "\"copy assignment declaration\"",
     "body": [
-      "${1:${VIM:Filename('', '<class name>')}}& operator=( const $1 &rhs );",
-      ""
+      "${1:$TM_FILENAME_BASE}& operator=( const $1 &rhs );"
     ]
   },
   "cp=": {
     "prefix": "cp=",
     "description": "\"copy assignment\"",
     "body": [
-      "${1:${VIM:Filename('', '<class name>')}}& $1::operator=( const $1 &rhs )",
+      "${1:$TM_FILENAME_BASE}& $1::operator=( const $1 &rhs )",
       "{",
-      "\t${2:${VISUAL}}",
-      "}",
-      ""
+      "\t${2:$TM_SELECTED_TEXT}",
+      "}"
     ]
   },
   "mvctord": {
     "prefix": "mvctord",
     "description": "\"move constructor declaration\"",
     "body": [
-      "${1:${VIM:Filename('', '<class name>')}}( $1 &&rhs );",
-      ""
+      "${1:$TM_FILENAME_BASE}( $1 &&rhs );"
     ]
   },
   "mvctor": {
     "prefix": "mvctor",
     "description": "\"move constructor\"",
     "body": [
-      "${1:${VIM:Filename('', '<class name>')}}::$1( $1 &&rhs )",
+      "${1:$TM_FILENAME_BASE}::$1( $1 &&rhs )",
       "{",
-      "\t${2:${VISUAL}}",
-      "}",
-      ""
+      "\t${2:$TM_SELECTED_TEXT}",
+      "}"
     ]
   },
   "mv=d": {
     "prefix": "mv=d",
     "description": "\"move assignment declaration\"",
     "body": [
-      "${1:${VIM:Filename('', '<class name>')}}& operator=( $1 &&rhs );",
-      ""
+      "${1:$TM_FILENAME_BASE}& operator=( $1 &&rhs );"
     ]
   },
   "mv=": {
     "prefix": "mv=",
     "description": "\"move assignment\"",
     "body": [
-      "${1:${VIM:Filename('', '<class name>')}}& $1::operator=( $1 &&rhs )",
+      "${1:$TM_FILENAME_BASE}& $1::operator=( $1 &&rhs )",
       "{",
-      "\t${2:${VISUAL}}",
-      "}",
-      ""
+      "\t${2:$TM_SELECTED_TEXT}",
+      "}"
     ]
   },
   "method": {
     "prefix": "method",
     "description": "\"member function\"",
     "body": [
-      "${1:<return type>} ${2:${VIM:Filename('', <class name>)}}::${3:<method name>}($4)",
+      "${1:<return type>} ${2:$TM_FILENAME_BASE}::${3:<method name>}($4)",
       "{",
-      "\t${5:${VISUAL}}",
-      "}",
-      ""
+      "\t${5:$TM_SELECTED_TEXT}",
+      "}"
     ]
   },
   "scast": {
     "prefix": "scast",
     "description": "\"static case\"",
     "body": [
-      "static_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )",
-      ""
+      "static_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )"
     ]
   },
   "dcast": {
     "prefix": "dcast",
     "description": "\"dynamic case\"",
     "body": [
-      "dynamic_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )",
-      ""
+      "dynamic_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )"
     ]
   },
   "ccast": {
     "prefix": "ccast",
     "description": "\"const case\"",
     "body": [
-      "const_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )",
-      ""
+      "const_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )"
     ]
   },
   "rcast": {
     "prefix": "rcast",
     "description": "\"reinterpret case\"",
     "body": [
-      "reinterpret_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )",
-      ""
+      "reinterpret_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )"
     ]
   }
 }

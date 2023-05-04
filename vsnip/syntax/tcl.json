@@ -3,8 +3,7 @@
     "prefix": "set",
     "description": "\"variable assignment\"",
     "body": [
-      "set ${1:<variable name>} ${2:<value>}",
-      ""
+      "set ${1:<variable name>} ${2:<value>}"
     ]
   },
   "if": {
@@ -14,16 +13,14 @@
       "if { ${1:<condition>} } {",
       "",
       "\t${2:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "if1": {
     "prefix": "if1",
     "description": "\"if control flow oneliner\"",
     "body": [
-      "if { ${1:<condition>} } { ${2:$TM_SELECTED_TEXT} }",
-      ""
+      "if { ${1:<condition>} } { ${2:$TM_SELECTED_TEXT} }"
     ]
   },
   "else": {
@@ -33,8 +30,7 @@
       "else {",
       "",
       "\t${1:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "ife": {
@@ -47,8 +43,7 @@
       "} else {",
       "",
       "\t${3:<else>}",
-      "}",
-      ""
+      "}"
     ]
   },
   "switch": {
@@ -65,8 +60,7 @@
       "",
       "\t\t${4:<default action>}",
       "\t}",
-      "}",
-      ""
+      "}"
     ]
   },
   "for": {
@@ -76,8 +70,7 @@
       "for { ${1:set ${2:i} ${3:0}} } { ${4:<condition>} } { ${5:incr $2} } {",
       "",
       "\t${6:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "fore": {
@@ -87,8 +80,7 @@
       "foreach ${1:<var>} ${2:<list>} {",
       "",
       "\t${3:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "while": {
@@ -98,8 +90,7 @@
       "while { ${1:<condition>} } {",
       "",
       "\t${2:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "func": {
@@ -109,48 +100,42 @@
       "proc ${1:<function name>} {${2:<arguments>}} {",
       "",
       "\t${3:$TM_SELECTED_TEXT}",
-      "}",
-      ""
+      "}"
     ]
   },
   "li": {
     "prefix": "li",
     "description": "\"get element of list\"",
     "body": [
-      "lindex ${1:<list>} ${2:<index>}",
-      ""
+      "lindex ${1:<list>} ${2:<index>}"
     ]
   },
   "la": {
     "prefix": "la",
     "description": "\"append element to list\"",
     "body": [
-      "lappend ${1:<list>} ${2:<element>}",
-      ""
+      "lappend ${1:<list>} ${2:<element>}"
     ]
   },
   "ll": {
     "prefix": "ll",
     "description": "\"get length of list\"",
     "body": [
-      "llength ${1:<list>}",
-      ""
+      "llength ${1:<list>}"
     ]
   },
   "dc": {
     "prefix": "dc",
     "description": "\"create dictionary\"",
     "body": [
-      "dict create ${1:<args>}",
-      ""
+      "dict create ${1:<args>}"
     ]
   },
   "dg": {
     "prefix": "dg",
     "description": "\"get value in the dict\"",
     "body": [
-      "dict get ${1:<dict>} ${2:<key>}",
-      ""
+      "dict get ${1:<dict>} ${2:<key>}"
     ]
   },
   "de": {

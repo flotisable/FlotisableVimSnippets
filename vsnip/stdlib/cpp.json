@@ -3,16 +3,14 @@
     "prefix": "str",
     "description": "\"std::string\"",
     "body": [
-      "std::string",
-      ""
+      "std::string"
     ]
   },
   "vec": {
     "prefix": "vec",
     "description": "\"std::vector\"",
     "body": [
-      "std::vector<${1:<type>}>",
-      ""
+      "std::vector<${1:<type>}>"
     ]
   },
   "array": {

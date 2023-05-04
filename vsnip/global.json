@@ -3,16 +3,14 @@
     "prefix": "author",
     "description": "\"snippet author\"",
     "body": [
-      "${VIM:g:snips_author}",
-      ""
+      "${VIM:g:snips_author}"
     ]
   },
   "pwd": {
     "prefix": "pwd",
     "description": "\"present working directory\"",
     "body": [
-      "${VIM:getcwd()}",
-      ""
+      "${VIM:getcwd()}"
     ]
   },
   "ls": {

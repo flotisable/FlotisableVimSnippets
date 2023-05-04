@@ -3,24 +3,21 @@
     "prefix": "#!",
     "description": "\"shebang\"",
     "body": [
-      "#!/bin/csh",
-      ""
+      "#!/bin/csh"
     ]
   },
   "set": {
     "prefix": "set",
     "description": "\"variable assignment\"",
     "body": [
-      "set ${1:<var>} = ${2:<value>}",
-      ""
+      "set ${1:<var>} = ${2:<value>}"
     ]
   },
   "setenv": {
     "prefix": "setenv",
     "description": "\"enviroenment variable assignment\"",
     "body": [
-      "setenv ${1:<var>} ${2:<value>}",
-      ""
+      "setenv ${1:<var>} ${2:<value>}"
     ]
   },
   "if": {
@@ -31,8 +28,7 @@
       "",
       "\t${0:$TM_SELECTED_TEXT}",
       "",
-      "endif",
-      ""
+      "endif"
     ]
   },
   "ife": {
@@ -47,8 +43,7 @@
       "",
       "\t${3:<else branch>}",
       "",
-      "endif",
-      ""
+      "endif"
     ]
   },
   "fore": {

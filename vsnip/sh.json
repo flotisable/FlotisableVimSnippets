@@ -39,8 +39,7 @@
       "",
       "\tesac",
       "",
-      "done",
-      ""
+      "done"
     ]
   },
   "setcolor": {
@@ -49,8 +48,7 @@
     "body": [
       "if [ -t 1 ]; then",
       "\ttput setaf ${1:<color code>}",
-      "fi",
-      ""
+      "fi"
     ]
   },
   "resetcolor": {
@@ -59,8 +57,7 @@
     "body": [
       "if [ -t 1 ]; then",
       "\ttput op",
-      "fi",
-      ""
+      "fi"
     ]
   },
   "if": {
@@ -71,8 +68,7 @@
       "",
       "\t${2:$TM_SELECTED_TEXT}",
       "",
-      "fi",
-      ""
+      "fi"
     ]
   },
   "ife": {
@@ -87,8 +83,7 @@
       "",
       "\t${3:<else branch>}",
       "",
-      "fi",
-      ""
+      "fi"
     ]
   },
   "switch": {
@@ -99,8 +94,7 @@
       "",
       "\t${2:<pattern>}) ${3:<action>};;",
       "",
-      "esac",
-      ""
+      "esac"
     ]
   },
   "while": {
@@ -111,8 +105,7 @@
       "",
       "\t${2:$TM_SELECTED_TEXT}",
       "",
-      "done",
-      ""
+      "done"
     ]
   },
   "fore": {
@@ -123,8 +116,7 @@
       "",
       "\t${3:$TM_SELECTED_TEXT}",
       "",
-      "done",
-      ""
+      "done"
     ]
   },
   "func": {

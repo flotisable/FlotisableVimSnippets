@@ -3,16 +3,14 @@
     "prefix": "setenv",
     "description": "\"environment variable assignment\"",
     "body": [
-      "set env(${1:<variable name>}) ${2:<value>}",
-      ""
+      "set env(${1:<variable name>}) ${2:<value>}"
     ]
   },
   "decenv": {
     "prefix": "decenv",
     "description": "\"environment variable declaration\"",
     "body": [
-      "if { ![info exists env(${1:<variable name>})] } { set env($1) ${2:<value>} }",
-      ""
+      "if { ![info exists env(${1:<variable name>})] } { set env($1) ${2:<value>} }"
     ]
   }
 }

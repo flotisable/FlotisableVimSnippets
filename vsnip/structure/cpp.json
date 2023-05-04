@@ -8,8 +8,7 @@
       "\t${0:$TM_SELECTED_TEXT}",
       "",
       "\treturn 0;",
-      "}",
-      ""
+      "}"
     ]
   }
 }
