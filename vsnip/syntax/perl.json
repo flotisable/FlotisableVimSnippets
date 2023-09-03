@@ -12,9 +12,7 @@
   "if1": {
     "prefix": "if1",
     "description": "\"if control flow oneliner\"",
-    "body": [
-      "${2:<statement>} if ${1:<condition>};"
-    ]
+    "body": "${2:<statement>} if ${1:<condition>};"
   },
   "else": {
     "prefix": "else",
@@ -39,9 +37,7 @@
   "unless1": {
     "prefix": "unless1",
     "description": "\"unless control flow oneliner\"",
-    "body": [
-      "${2:statement} unless ${1:<condition>};"
-    ]
+    "body": "${2:statement} unless ${1:<condition>};"
   },
   "while": {
     "prefix": "while",
@@ -56,9 +52,7 @@
   "while1": {
     "prefix": "while1",
     "description": "\"while control flow oneliner\"",
-    "body": [
-      "${2:<statement>} while ${1:<condition>};"
-    ]
+    "body": "${2:<statement>} while ${1:<condition>};"
   },
   "until": {
     "prefix": "until",
@@ -73,9 +67,7 @@
   "until1": {
     "prefix": "until1",
     "description": "\"until control flow oneliner\"",
-    "body": [
-      "${2:<statement>} until ${1:<condition>};"
-    ]
+    "body": "${2:<statement>} until ${1:<condition>};"
   },
   "fore": {
     "prefix": "fore",
@@ -90,9 +82,7 @@
   "fore1": {
     "prefix": "fore1",
     "description": "\"foreach control flow oneliner\"",
-    "body": [
-      "${2:<statement>} for ${1:<condition>};"
-    ]
+    "body": "${2:<statement>} for ${1:<condition>};"
   },
   "func": {
     "prefix": "func",

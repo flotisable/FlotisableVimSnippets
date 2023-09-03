@@ -2,23 +2,17 @@
   "#!": {
     "prefix": "#!",
     "description": "\"shebang\"",
-    "body": [
-      "#!/bin/csh"
-    ]
+    "body": "#!/bin/csh"
   },
   "set": {
     "prefix": "set",
     "description": "\"variable assignment\"",
-    "body": [
-      "set ${1:<var>} = ${2:<value>}"
-    ]
+    "body": "set ${1:<var>} = ${2:<value>}"
   },
   "setenv": {
     "prefix": "setenv",
     "description": "\"enviroenment variable assignment\"",
-    "body": [
-      "setenv ${1:<var>} ${2:<value>}"
-    ]
+    "body": "setenv ${1:<var>} ${2:<value>}"
   },
   "if": {
     "prefix": "if",

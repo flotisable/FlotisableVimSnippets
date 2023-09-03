@@ -2,16 +2,12 @@
   "setenv": {
     "prefix": "setenv",
     "description": "\"environment variable assignment\"",
-    "body": [
-      "set env(${1:<variable name>}) ${2:<value>}"
-    ]
+    "body": "set env(${1:<variable name>}) ${2:<value>}"
   },
   "decenv": {
     "prefix": "decenv",
     "description": "\"environment variable declaration\"",
-    "body": [
-      "if { ![info exists env(${1:<variable name>})] } { set env($1) ${2:<value>} }"
-    ]
+    "body": "if { ![info exists env(${1:<variable name>})] } { set env($1) ${2:<value>} }"
   },
   "openr": {
     "prefix": "openr",
@@ -22,7 +18,7 @@
       "foreach line [split [read \\$file] \"n\"] {",
       "",
       "\t${2:$TM_SELECTED_TEXT}",
-      "\\}",
+      "}",
       "close \\$file"
     ]
   }

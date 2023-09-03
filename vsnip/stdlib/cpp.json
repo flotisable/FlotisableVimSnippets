@@ -2,16 +2,12 @@
   "str": {
     "prefix": "str",
     "description": "\"std::string\"",
-    "body": [
-      "std::string"
-    ]
+    "body": "std::string"
   },
   "vec": {
     "prefix": "vec",
     "description": "\"std::vector\"",
-    "body": [
-      "std::vector<${1:<type>}>"
-    ]
+    "body": "std::vector<${1:<type>}>"
   },
   "array": {
     "prefix": "array",

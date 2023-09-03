@@ -111,9 +111,7 @@
   "funcd": {
     "prefix": "funcd",
     "description": "\"function declaration\"",
-    "body": [
-      "${1:void} ${2:<function name>}($3);"
-    ]
+    "body": "${1:void} ${2:<function name>}($3);"
   },
   "func": {
     "prefix": "func",
@@ -253,29 +251,21 @@
   "scast": {
     "prefix": "scast",
     "description": "\"static case\"",
-    "body": [
-      "static_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )"
-    ]
+    "body": "static_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )"
   },
   "dcast": {
     "prefix": "dcast",
     "description": "\"dynamic case\"",
-    "body": [
-      "dynamic_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )"
-    ]
+    "body": "dynamic_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )"
   },
   "ccast": {
     "prefix": "ccast",
     "description": "\"const case\"",
-    "body": [
-      "const_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )"
-    ]
+    "body": "const_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )"
   },
   "rcast": {
     "prefix": "rcast",
     "description": "\"reinterpret case\"",
-    "body": [
-      "reinterpret_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )"
-    ]
+    "body": "reinterpret_cast<${1:<type>}>( ${2:$TM_SELECTED_TEXT} )"
   }
 }

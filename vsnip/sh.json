@@ -2,10 +2,7 @@
   "#!": {
     "prefix": "#!",
     "description": "\"shebang\"",
-    "body": [
-      "#!/bin/bash",
-      ""
-    ]
+    "body": "#!/bin/bash"
   },
   "usage": {
     "prefix": "usage",
@@ -22,8 +19,7 @@
       "\techo \"  Options:\"",
       "\techo \"    -h\"",
       "\techo \"      print this help message\"$4",
-      "}",
-      ""
+      "}"
     ]
   },
   "getopt": {

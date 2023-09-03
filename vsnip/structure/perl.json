@@ -2,9 +2,7 @@
   "#!": {
     "prefix": "#!",
     "description": "\"shebang\"",
-    "body": [
-      "#!/usr/bin/perl"
-    ]
+    "body": "#!/usr/bin/perl"
   },
   "pragma": {
     "prefix": "pragma",
