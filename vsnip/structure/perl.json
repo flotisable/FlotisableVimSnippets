@@ -91,7 +91,7 @@
       "",
       "use Moose;",
       "",
-      "${0:${VISUAL}}",
+      "${0:$TM_SELECTED_TEXT}",
       "",
       "no Moose;",
       "1;"
