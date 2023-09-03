@@ -3,22 +3,18 @@ version 1
 # basic syntax
 snippet set "variable assignment"
 	set ${1:<variable name>} ${2:<value>}
-
 snippet if "if control flow"
 	if { ${1:<condition>} } {
 
 		${2:${VISUAL}}
 	}
-
 snippet if1 "if control flow oneliner"
 	if { ${1:<condition>} } { ${2:${VISUAL}} }
-
 snippet else "else control flow"
 	else {
 
 		${1:${VISUAL}}
 	}
-
 snippet ife "if else control flow"
 	if { ${1:<condition>} } {
 
@@ -27,7 +23,6 @@ snippet ife "if else control flow"
 
 		${3:<else>}
 	}
-
 snippet switch "switch control flow"
 	switch ${1:<target>} {
 
@@ -40,47 +35,37 @@ snippet switch "switch control flow"
 			${4:<default action>}
 		}
 	}
-
 snippet for "for control flow"
 	for { ${1:set ${2:i} ${3:0}} } { ${4:<condition>} } { ${5:incr ${2}} } {
 
 		${6:${VISUAL}}
 	}
-
 snippet fore "foreach control flow"
 	foreach ${1:<var>} ${2:<list>} {
 
 		${3:${VISUAL}}
 	}
-
 snippet while "while control flow"
 	while { ${1:<condition>} } {
 
 		${2:${VISUAL}}
 	}
-
 snippet func "function"
 	proc ${1:<function name>} {${2:<arguments>}} {
 
 		${3:${VISUAL}}
 	}
-
 # list
 snippet li "get element of list"
 	lindex ${1:<list>} ${2:<index>}
-
 snippet la "append element to list"
 	lappend ${1:<list>} ${2:<element>}
-
 snippet ll "get length of list"
 	llength ${1:<list>}
-
 # dictionary
 snippet dc "create dictionary"
 	dict create ${1:<args>}
-
 snippet dg "get value in the dict"
 	dict get ${1:<dict>} ${2:<key>}
-
 snippet de "check existence of key"
 	dict exists ${1:<dict>} ${2:<key>}

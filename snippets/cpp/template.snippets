@@ -10,7 +10,6 @@ snippet template "template of main source file"
 
 		return 0;
 	}
-
 snippet header "template of header file"
 	#ifndef ${1:<protect macro>}
 	#define ${1}
@@ -18,7 +17,6 @@ snippet header "template of header file"
 	${0}
 
 	#endif
-
 snippet source "template of source file"
 	#include "`Filename( '$1.h' )`"
 

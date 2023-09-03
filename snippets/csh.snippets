@@ -3,21 +3,17 @@ version 1
 # basic structure
 snippet #! "shebang"
 	#!/bin/csh
-
 # basic syntax
 snippet set "variable assignment"
 	set ${1:<var>} = ${2:<value>}
-
 snippet setenv "enviroenment variable assignment"
 	setenv ${1:<var>} ${2:<value>}
-
 snippet if "if control flow"
 	if( ${1:<condition>} ) then
 
 		${0:${VISUAL}}
 
 	endif
-
 snippet ife "if else control flow"
 	if( ${1:<condition>} ) then
 
@@ -28,7 +24,6 @@ snippet ife "if else control flow"
 		${3:<else branch>}
 
 	endif
-
 snippet fore "foreach control flow"
 	foreach ${1:<var>} ( ${2:<list>} )
 

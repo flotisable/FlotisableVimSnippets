@@ -7,7 +7,6 @@ snippet if "if control flow"
 		${2:${VISUAL}}
 	"
 	endif
-
 snippet ife "if else control flow"
 	if ${1:<condition>}
 	"
@@ -18,14 +17,12 @@ snippet ife "if else control flow"
 		${3}
 	"
 	endif
-	
 snippet func "function definition"
 	function ${1:<function name>}(${2:<arguments>})
 	"
 		${3:${VISUAL}}
 	"
 	endfunction
-
 # vimrc structure
 snippet ifplug "add setting for a plugin"
 	if MyPluginExistsAndInRtp( '${1:<plugin name>}' )

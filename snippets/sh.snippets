@@ -3,7 +3,6 @@ version 1
 # basic structure
 snippet #! "shebang"
 	#!/bin/bash
-
 snippet usage "function to print help messages"
 	usage()
 	{
@@ -17,7 +16,6 @@ snippet usage "function to print help messages"
 		echo "    -h"
 		echo "      print this help message"${4}
 	}
-
 snippet getopt "process command line options"
 	while getopts "${1:h}" option; do
 
@@ -29,17 +27,14 @@ snippet getopt "process command line options"
 		esac
 
 	done
-
 snippet setcolor "set ANSI color for output"
 	if [ -t 1 ]; then
 		tput setaf ${1:<color code>}
 	fi
-
 snippet resetcolor "reset ANSI color for output"
 	if [ -t 1 ]; then
 		tput op
 	fi
-
 # basic syntax
 snippet if "if control flow"
 	if [ ${1:<condition>} ]; then
@@ -47,7 +42,6 @@ snippet if "if control flow"
 		${2:${VISUAL}}
 
 	fi
-
 snippet ife "if else control flow"
 	if [ ${1:<condition>} ]; then
 
@@ -58,28 +52,24 @@ snippet ife "if else control flow"
 		${3:<else branch>}
 
 	fi
-
 snippet switch "switch control flow"
 	case ${1:<word>} in
 
 		${2:<pattern>}) ${3:<action>};;
 
 	esac
-
 snippet while "while control flow"
 	while [ ${1:<condition>} ]; do
 
 		${2:${VISUAL}}
 
 	done
-
 snippet fore "foreach control flow"
 	for ${1:<var>} in ${2:<list>}; do
 
 		${3:${VISUAL}}
 
 	done
-
 snippet func "function"
 	${1:<function name>}()
 	{

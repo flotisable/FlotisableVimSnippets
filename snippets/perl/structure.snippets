@@ -3,31 +3,25 @@ version 1
 # basic structure
 snippet #! "shebang"
 	#!/usr/bin/perl
-
 snippet pragma "default pragmas"
 	use strict;
 	use warnings;
-
 snippet getopt "command line options"
 	GetOptions(
 							${0}
 						) or die 'Invalid Option';
-
 snippet getopta "command line options"
 	GetOptionsFromArray	( \\${1:<array>},
 												${0}
 											) or die 'Invalid Option';
-
 snippet myopt "option hash"
 	my %opts =  (
 	              ${1:<option>} => ${2:<default>},${3}
 	            );
-
 snippet mypat "pattern hash"
 	my %patterns =  (
 	                  ${1:<pattern>} => qr/${2:<regex>}/,${3}
 	                );
-
 snippet myprog "program hash"
 	my %programs =  (
 	                  ${1:<program>} => "${2:<path>}",${3}
@@ -40,14 +34,12 @@ snippet openr "open file for read"
 		${0:${VISUAL}}
 	}
 	close ${1};
-
 snippet openw "open file for write"
 	open my ${1:\$fh}, '>', ${2:<file name>};
 
 	${0:${VISUAL}}
 
 	close ${1}
-
 # Moose
 snippet class "Moose class"
 	package ${1:`Filename( '', '<package name>')`};
@@ -58,7 +50,6 @@ snippet class "Moose class"
 
 	no Moose;
 	1;
-
 snippet attr "object attribute"
 	has ${1:<attribute name>} =>
 	(
@@ -66,7 +57,6 @@ snippet attr "object attribute"
 		isa     => '${2:Maybe[${3:<type>}]}',
 		default => ${4:<default value>},
 	);
-
 snippet method "object method"
 	sub ${1:<method name>}
 	{
@@ -74,7 +64,6 @@ snippet method "object method"
 
 		${0:${VISUAL}}
 	}
-
 # documentation
 snippet docname "program name doc"
 	=head1 NAME
@@ -82,14 +71,12 @@ snippet docname "program name doc"
 	B<${1:`Filename( '$1.pl', '<program name>')`}> - ${2:<description>}
 
 	=cut
-
 snippet docsyn "synopsis doc"
 	=head1 SYNOPSIS
 
 	${1:`Filename( '$1.pl', '<program name>')`} ${2:<synopsis>}
 
 	=cut
-
 snippet docopts "command line options doc"
 	=head1 OPTIONS
 
@@ -102,12 +89,10 @@ snippet docopts "command line options doc"
 	=back
 
 	=cut
-
 snippet docopt "command line option doc"
 	=item I<${1:<option>}>
 
 	${2:<description>}
-
 snippet docfunc "function doc"
 	=head3 ${1:<function name>}
 

@@ -3,10 +3,8 @@ version 1
 # basic structure
 snippet setenv "environment variable assignment"
 	set env(${1:<variable name>}) ${2:<value>}
-
 snippet decenv "environment variable declaration"
 	if { ![info exists env(${1:<variable name>})] } { set env(${1}) ${2:<value>} }
-
 snippet openr "open file and read line by line"
 	set file [open "${1:<file name>}"]
 
