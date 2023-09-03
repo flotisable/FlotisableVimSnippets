@@ -22,6 +22,27 @@ local function renameVsnipSnippet( fromName, toName )
 
 end
 
+local function convertionPostProcess( fileName )
+
+  local tmpFileName = fileName .. '.tmp'
+  local file        = io.open( tmpFileName, 'w' )
+
+  if file then
+
+    for line in io.lines( fileName ) do
+      file:write( string.gsub( line, '\\\\}', '}' ) .. "\n" )
+    end
+
+    file:close();
+    renameVsnipSnippet(
+      string.gsub( tmpFileName, vsnipDir .. '/', '' ),
+      string.gsub( fileName,    vsnipDir .. '/', '' )
+    )
+
+  end
+
+end
+
 local function loopSnipMateDir( callback )
   for dir, type in vim.fs.dir( snipMateDir ) do
     if type == 'directory' then
@@ -96,3 +117,17 @@ loopSnipMateDir( function( dir )
   end
 
 end )
+
+for item, type in vim.fs.dir( vsnipDir ) do
+
+  if type == 'directory' then
+    for file, type in vim.fs.dir( table.concat( { vsnipDir, item }, '/' ) )  do
+      if type == 'file' then
+        convertionPostProcess( table.concat( { vsnipDir, item, file }, '/' )  )
+      end
+    end
+  elseif type == 'file' then
+    convertionPostProcess( table.concat( { vsnipDir, item }, '/' )  )
+  end
+
+end
